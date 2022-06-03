@@ -31,7 +31,7 @@
         <repository>
             <id>github</id>
             <name>GitHub MineValley Apache Maven Packages</name>
-            <url>https://maven.pkg.github.com/MineValley/Smart</url>
+            <url>https://maven.pkg.github.com/MineValley/SmartAPI</url>
         </repository>
     </distributionManagement>
 
