@@ -1,4 +1,4 @@
-name: Core-API | Maven-deployer
+name: SmartAPI | Maven-deployer
 
 # This workflow is used to deploy a new maven-build of this api, whenever a new release is created.
 # Always make sure to delete the latest package before creating a new release!
