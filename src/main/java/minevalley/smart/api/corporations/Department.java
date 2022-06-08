@@ -23,25 +23,11 @@ public interface Department extends Registered {
     String getName();
 
     /**
-     * Sets this departments name.
-     *
-     * @param name name as string
-     */
-    void setName(String name);
-
-    /**
      * Gets this department's description.
      *
      * @return description as string
      */
     String getDescription();
-
-    /**
-     * Sets this departments description.
-     *
-     * @param description description as string
-     */
-    void setDescription(String description);
 
     /**
      * Gets the holder of this department.
@@ -81,13 +67,6 @@ public interface Department extends Registered {
     double getBaseWage();
 
     /**
-     * Sets this departments base wage.
-     *
-     * @param baseWage base wage as double
-     */
-    void setBaseWage(double baseWage);
-
-    /**
      * Gets the service wage this departments members get. If a different service wage is specified in the member object, this is used.
      * <p>
      * <b>Note:</b> This is only usable for company-departments!
@@ -95,13 +74,6 @@ public interface Department extends Registered {
      * @return departments service wage
      */
     double getServiceWage();
-
-    /**
-     * Sets this departments service wage.
-     *
-     * @param serviceWage service wage as double
-     */
-    void setServiceWage(double serviceWage);
 
     /**
      * Gets the permissions that are automatically granted to all members of this department.

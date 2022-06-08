@@ -1,14 +1,11 @@
 package minevalley.smart.api.utils.gui;
 
-import minevalley.smart.api.User;
-import org.bukkit.entity.Player;
+import minevalley.smart.api.Session;
 import org.bukkit.inventory.Inventory;
 
 public interface Window {
 
-    Window open(Player player);
-
-    Window open(User user);
+    Window open(Session session);
 
     Window update();
 

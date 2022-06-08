@@ -15,5 +15,5 @@ public @interface Description {
 
     String[] authors();
 
-    String iconUrl();
+    String iconHead();
 }

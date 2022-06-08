@@ -22,33 +22,11 @@ public interface Group extends Registered {
     String getName();
 
     /**
-     * Sets the name of this group.
-     *
-     * @return Result of the rename
-     */
-    RenameFeedback changeName(String name);
-
-    /**
      * Gets this group's description
      *
      * @return description as string
      */
     String getDescription();
-
-    /**
-     * Sets the description of this group.
-     *
-     * @param description description as string
-     */
-    void setDescription(String description);
-
-    /**
-     * Changes the description of this group. Max. length = 150 chars; Min. length = 15 chars
-     *
-     * @param description description as string
-     * @return result of the description change
-     */
-    RenameFeedback changeDescription(String description);
 
     /**
      * Gets whether this group is a company (otherwise: organization).
@@ -86,37 +64,9 @@ public interface Group extends Registered {
     List<Department> getDepartments();
 
     /**
-     * Removes the member with the specific unique id from this group.
-     *
-     * @param uniqueId member to remove
-     */
-    void removeMember(String uniqueId);
-
-    /**
-     * Adds a member with the specific unique id to this group.
-     *
-     * @param uniqueId member to add
-     */
-    void addMember(String uniqueId);
-
-    /**
      * Gets the bank account of this group.
      *
      * @return bank account of group
      */
     BankAccount getBankAccount();
-
-    /**
-     * Deletes this group.
-     */
-    void delete();
-
-    enum RenameFeedback {
-        FORBIDDEN_CHARACTERS,
-        FORBIDDEN_WORDS,
-        ALREADY_USED,
-        TOO_LONG,
-        TOO_SHORT,
-        SUCCESS
-    }
 }

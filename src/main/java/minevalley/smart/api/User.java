@@ -300,20 +300,6 @@ public interface User extends Registered {
     String[] getBellBlacklist();
 
     /**
-     * Adds the user with the specific unique id to this users bellblacklist
-     *
-     * @param uniqueId unique id of the user to block
-     */
-    void removeFromBellBlacklist(String uniqueId);
-
-    /**
-     * Removes the user with the specific unique id from this users bellblacklist
-     *
-     * @param uniqueId unique id of the user to block
-     */
-    void addToBellBlacklist(String uniqueId);
-
-    /**
      * Gets a specific setting that the user can change.
      * <p>
      * <b>Note:</b> If the user did not provide a value, this will return null!
@@ -404,11 +390,6 @@ public interface User extends Registered {
      * @return true, if the user is allowed to enter the support-service
      */
     boolean canEnterSupportService();
-
-    /**
-     * Lets the user leave the support-service.
-     */
-    void leaveSupportService();
 
     /**
      * Gets whether the user is marked as server-operator (!= OP-permission)
