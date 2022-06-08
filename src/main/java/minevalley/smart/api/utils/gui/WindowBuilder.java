@@ -26,8 +26,6 @@ public interface WindowBuilder {
 
     WindowBuilder addInterfaceItemsInRange(InterfaceItem item, int from, int to);
 
-    WindowBuilder addCloser();
-
     WindowBuilder onClose(Consumer<User> callback);
 
     WindowBuilder onCloseButton(Consumer<User> callback);
