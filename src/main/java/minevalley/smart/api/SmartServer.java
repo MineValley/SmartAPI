@@ -97,8 +97,6 @@ public interface SmartServer {
 
     void registerListeners(Listener listener);
 
-    void registerPipelineReceiver(PipelineReceiver pipeLineManager);
-
     void sendPipelineContainer(String pipelineName, Container container);
 
 
