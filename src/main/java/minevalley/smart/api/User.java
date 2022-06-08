@@ -6,11 +6,8 @@ import lombok.NonNull;
 import lombok.Setter;
 import minevalley.smart.api.economy.BankAccount;
 import minevalley.smart.api.enums.*;
-import minevalley.smart.api.enums.sounds.AmbientSound;
 import minevalley.smart.api.enums.sounds.Sound;
-import minevalley.smart.api.phone.Phone;
 import net.md_5.bungee.api.chat.BaseComponent;
-import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
@@ -69,11 +66,6 @@ public interface User extends Registered {
      */
     McVersion getVersion();
 
-    /**
-     * Removes the whole user-object and loads it again from the database.
-     */
-    void refresh();
-
     // Messages
 
     /**
@@ -82,20 +74,6 @@ public interface User extends Registered {
      * @param sound sound to be played
      */
     void playSound(Sound sound);
-
-    /**
-     * Gets the ambient this user is currently hearing
-     *
-     * @return ambient this user is hearing
-     */
-    AmbientSound getAmbient();
-
-    /**
-     * Sets the current ambient, the user will hear
-     *
-     * @param ambient ambient for the user to hear
-     */
-    void setAmbient(AmbientSound ambient);
 
     /**
      * Starts the credits sequence.
@@ -284,13 +262,6 @@ public interface User extends Registered {
     // Accounts and socials
 
     /**
-     * Gets the users phone
-     *
-     * @return phone of this user
-     */
-    Phone getPhone();
-
-    /**
      * Gets the users bank account.
      *
      * @return users bank account
@@ -428,40 +399,11 @@ public interface User extends Registered {
     boolean isAllowedToUseGeneralKey();
 
     /**
-     * Gets whether the user is using a general-key at the moment, by checking the item in his hand. If he is using a general-key without the permission to do, his key gets removed automatically.
-     *
-     * @return true, if the player is using a general-key
-     */
-    boolean isUsingGeneralKey();
-
-    /**
-     * Gets whether the user is allowed to join team service.
-     *
-     * @return true, if the user is allowed to join team service
-     */
-    boolean isTeamAuth();
-
-    /**
-     * Lets the user enter the team-service. If the user isn't teamler, nothing happens.
-     */
-    void joinTeamService();
-
-    /**
-     * Lets the user leave the team-service.
-     */
-    void leaveTeamService();
-
-    /**
      * Gets whether the user is allowed to enter the support-service.
      *
      * @return true, if the user is allowed to enter the support-service
      */
     boolean canEnterSupportService();
-
-    /**
-     * Lets the user enter the support-service. If the user isn't allowed to, nothing happens.
-     */
-    void joinSupportService();
 
     /**
      * Lets the user leave the support-service.
@@ -536,19 +478,6 @@ public interface User extends Registered {
      */
     double getCash();
 
-    /**
-     * Removes a certain amount of cash of the users wallet.
-     *
-     * @param amount amout to remove
-     * @return true, if the transaction was successful. If the user doesn't have enough money, this is false
-     */
-    boolean payCash(double amount);
-
-    /**
-     * Updates the users cash from the database
-     */
-    void updateCash();
-
     // WantedLevel & KnockOut
 
     /**
@@ -557,13 +486,6 @@ public interface User extends Registered {
      * @return wanted-level of the user. 0 if the player isn't wanted
      */
     int getWantedLevel();
-
-    /**
-     * Sets the wanted-level of the user
-     *
-     * @param level new wanted-level
-     */
-    void setWantedLevel(int level);
 
     /**
      * Gets whether the user is knocked out.
@@ -587,62 +509,11 @@ public interface User extends Registered {
     boolean isVanish();
 
     /**
-     * Defines whether this user is vanished.
-     * <b>Note:</b> this method only changes the state (The user is still visible)
-     *
-     * @param vanish vanish state
-     */
-    void setVanish(boolean vanish);
-
-    /**
      * Gets whether the user is locked up in one of the state prisons.
      *
      * @return true, if the user is locked up in prison
      */
     boolean isImprisoned();
-
-    /**
-     * Imprisons this user.
-     *
-     * @param duration duration in minutes
-     */
-    void imprison(int duration);
-
-    /**
-     * Players can be freezed by a team member. This method gets wether this user is freezed.
-     *
-     * @return true, if the user is currently freezed
-     */
-    boolean isFrozen();
-
-    /**
-     * Freezes this user.
-     */
-    void freeze();
-
-    /**
-     * Unfreezes this user.
-     */
-    void unfreeze();
-
-    /**
-     * Gets whether the user has completed registration on our network.
-     *
-     * @return true, if the user is registered
-     */
-    boolean isRegistered();
-
-    /**
-     * Gets whether this user is allowed to break/place/use a block at the given position regarding to the regions-system.
-     *
-     * @param block block to check
-     * @return true, if this user is allowed to break/place/use a block here
-     */
-    boolean isAllowedToUse(Block block);
-
-    void changeSign(Block block, final String line1, final String line2, final String line3, final String line4);
-
-    void resetSign(Block block);
 
     @Getter
     @Setter

@@ -13,12 +13,13 @@ import minevalley.smart.api.database.Value;
 import minevalley.smart.api.economy.BankAccount;
 import minevalley.smart.api.enums.InterfaceItem;
 import minevalley.smart.api.modulepipeline.Container;
-import minevalley.smart.api.modulepipeline.PipelineReceiver;
-import minevalley.smart.api.phone.Telephone;
 import minevalley.smart.api.timing.Reminder;
 import minevalley.smart.api.timing.RepeatingTimer;
 import minevalley.smart.api.timing.Timer;
-import minevalley.smart.api.utils.*;
+import minevalley.smart.api.utils.ClickableMessage;
+import minevalley.smart.api.utils.Countdown;
+import minevalley.smart.api.utils.EventListener;
+import minevalley.smart.api.utils.ItemBuilder;
 import minevalley.smart.api.utils.gui.WindowBuilder;
 import minevalley.smart.api.utils.gui.WindowItem;
 import net.md_5.bungee.api.ChatColor;
@@ -1019,26 +1020,6 @@ public final class Smart {
      */
     public static Group getGroup(String name) {
         return server.getGroup(name);
-    }
-
-    /**
-     * Creates a new telephone with the given owner. The owner should be the registered id.
-     *
-     * @param owner owner's registered id
-     * @return new telephone with the specific owner
-     */
-    public static Telephone createTelephone(String owner) {
-        return server.createTelephone(owner);
-    }
-
-    /**
-     * Gets the telephone with the specific telephone number.
-     *
-     * @param telephoneNumber telephone number to get telephone from
-     * @return telephone with the specific telephone number
-     */
-    public static Telephone getTelephone(String telephoneNumber) {
-        return server.getTelephone(telephoneNumber);
     }
 
     /**

@@ -30,7 +30,7 @@ public abstract class SmartApp {
 
     }
 
-    public void onAppOpen(Session session) {
+    public void onSessionCreate(Session session) {
 
     }
 }

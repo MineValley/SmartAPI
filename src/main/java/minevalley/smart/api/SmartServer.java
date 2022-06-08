@@ -10,12 +10,13 @@ import minevalley.smart.api.database.DatabaseTable;
 import minevalley.smart.api.database.Value;
 import minevalley.smart.api.economy.BankAccount;
 import minevalley.smart.api.modulepipeline.Container;
-import minevalley.smart.api.modulepipeline.PipelineReceiver;
-import minevalley.smart.api.phone.Telephone;
 import minevalley.smart.api.timing.Reminder;
 import minevalley.smart.api.timing.RepeatingTimer;
 import minevalley.smart.api.timing.Timer;
-import minevalley.smart.api.utils.*;
+import minevalley.smart.api.utils.ClickableMessage;
+import minevalley.smart.api.utils.Countdown;
+import minevalley.smart.api.utils.EventListener;
+import minevalley.smart.api.utils.ItemBuilder;
 import minevalley.smart.api.utils.gui.WindowBuilder;
 import minevalley.smart.api.utils.gui.WindowItem;
 import net.md_5.bungee.api.chat.BaseComponent;
@@ -200,10 +201,6 @@ public interface SmartServer {
     Group getGroup(String name);
 
     boolean containsForForbiddenWords(String string);
-
-    Telephone createTelephone(String owner);
-
-    Telephone getTelephone(String telephoneNumber);
 
     Registered getRegistered(User user);
 
