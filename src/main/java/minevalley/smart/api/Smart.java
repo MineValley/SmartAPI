@@ -358,10 +358,6 @@ public final class Smart {
         server.registerListeners(listener);
     }
 
-    public static void registerPipeline(PipelineReceiver pipelineReceiver) {
-        server.registerPipelineReceiver(pipelineReceiver);
-    }
-
     public static void sendPipelineContainer(String pipelineName, Container container) {
         server.sendPipelineContainer(pipelineName, container);
     }
