@@ -65,6 +65,8 @@
             <groupId>minevalley.core</groupId>
             <artifactId>api</artifactId>
             <version>1.133</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/src/main/resources/CoreAPI.jar</systemPath>
             <!-- Don't use LATEST here -->
         </dependency>
         <dependency>
