@@ -1,11 +1,6 @@
 package minevalley.smart.api.utils.gui;
 
-import minevalley.smart.api.Session;
-import org.bukkit.inventory.Inventory;
-
 public interface Window {
-
-    Window open(Session session);
 
     Window update();
 
@@ -22,8 +17,6 @@ public interface Window {
     void addItem(WindowItem guiItem);
 
     void removeItem(WindowItem guiItem);
-
-    Inventory getInventory();
 
     WindowItem getItem(int slot);
 }

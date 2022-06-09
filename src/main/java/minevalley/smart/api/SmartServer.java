@@ -1,11 +1,9 @@
 package minevalley.smart.api;
 
-import com.google.gson.Gson;
 import minevalley.smart.api.utils.ItemBuilder;
 import minevalley.smart.api.utils.gui.WindowBuilder;
 import minevalley.smart.api.utils.gui.WindowItem;
 import net.md_5.bungee.api.chat.BaseComponent;
-import net.md_5.bungee.api.chat.ClickEvent;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
@@ -89,23 +87,15 @@ public interface SmartServer {
 
     User getUser(Player player);
 
-    ClickEvent createClickEvent(boolean selfCancelling, Consumer<User> callback);
-
     void setMetadata(Metadatable metadatable, String key, Object value);
 
     void removeMetadata(Metadatable metadatable, String key);
 
     List<MetadataValue> getMetadata(Metadatable metadatable, String key);
 
-    Gson getGson();
-
     String getName(String uniqueId);
 
     String getUniqueId(String name);
-
-    String removeColorCodes(String text);
-
-    String convertColorCodes(String text);
 
     int randomInteger(int chars);
 
@@ -134,12 +124,6 @@ public interface SmartServer {
     ItemBuilder createItem(UUID uniqueId);
 
     ItemBuilder createItem(String url);
-
-    Inventory getInventoryFromString(String inventory);
-
-    String getStringFromInventory(Inventory inventory);
-
-    boolean containsForForbiddenWords(String string);
 
     boolean isMaintenance();
 }
