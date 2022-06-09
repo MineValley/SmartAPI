@@ -1,8 +1,8 @@
 package minevalley.smart.api;
 
 import minevalley.smart.api.utils.ItemBuilder;
-import minevalley.smart.api.utils.gui.WindowBuilder;
-import minevalley.smart.api.utils.gui.WindowItem;
+import minevalley.smart.api.utils.window.WindowBuilder;
+import minevalley.smart.api.utils.window.WindowItem;
 import net.md_5.bungee.api.chat.BaseComponent;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -103,15 +103,15 @@ public interface SmartServer {
 
     String formatMoney(double amount);
 
-    WindowBuilder gui(Inventory inventory);
+    WindowBuilder window(Inventory inventory);
 
-    WindowBuilder gui(int size);
+    WindowBuilder window(int size);
 
-    WindowBuilder gui(List<WindowItem> items, int size, String title, Smart.PosItem... posItems);
+    WindowBuilder window(List<WindowItem> items, int size, String title, Smart.PosItem... posItems);
 
-    WindowItem guiItem(ItemStack itemStack, Consumer<User> consumer);
+    WindowItem windowItem(ItemStack itemStack, Consumer<User> consumer);
 
-    WindowItem advancedGuiItem(ItemStack itemStack, BiConsumer<User, ClickType> consumer);
+    WindowItem advancedWindowItem(ItemStack itemStack, BiConsumer<User, ClickType> consumer);
 
     ItemBuilder createItem(ItemStack itemStack);
 

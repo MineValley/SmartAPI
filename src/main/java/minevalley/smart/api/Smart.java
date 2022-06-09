@@ -4,8 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import minevalley.smart.api.enums.InterfaceItem;
 import minevalley.smart.api.utils.ItemBuilder;
-import minevalley.smart.api.utils.gui.WindowBuilder;
-import minevalley.smart.api.utils.gui.WindowItem;
+import minevalley.smart.api.utils.window.WindowBuilder;
+import minevalley.smart.api.utils.window.WindowItem;
 import net.md_5.bungee.api.chat.BaseComponent;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -498,118 +498,118 @@ public final class Smart {
     }
 
     /**
-     * Creates new gui-builder based on a existing inventory.
+     * Creates new Window-builder based on a existing inventory.
      *
-     * @param inventory inventory on which the gui-builder should base on
-     * @return new gui-builder
+     * @param inventory inventory on which the Window-builder should base on
+     * @return new Window-builder
      */
-    public static WindowBuilder createGui(Inventory inventory) {
-        return server.gui(inventory);
+    public static WindowBuilder createWindow(Inventory inventory) {
+        return server.window(inventory);
     }
 
     /**
-     * Creates new gui-builder with the specific size.
+     * Creates new Window-builder with the specific size.
      *
      * @param size size of the inventory (has to be a multiple of 9)
-     * @return new gui-builder
+     * @return new Window-builder
      */
-    public static WindowBuilder createGui(int size) {
-        return server.gui(size);
+    public static WindowBuilder createWindow(int size) {
+        return server.window(size);
     }
 
     /**
-     * Creates new gui-builder with the specific size.
+     * Creates new Window-builder with the specific size.
      *
      * @param items    list of the items to display
      * @param size     size of each inventory (has to be a multiple of 9)
      * @param posItems items to be placed on specific slots on every inventory
-     * @return new gui-builder
+     * @return new Window-builder
      */
-    public static WindowBuilder createGui(List<WindowItem> items, int size, String title, PosItem... posItems) {
-        return server.gui(items, size, title, posItems);
+    public static WindowBuilder createWindow(List<WindowItem> items, int size, String title, PosItem... posItems) {
+        return server.window(items, size, title, posItems);
     }
 
     /**
-     * Creates new gui-item, based on a specific itemstack with a specific callback.
-     * Gui-items can be added to inventory-guis (built by gui-builder). If a player clicks the gui-item, the callback is called with the player-object.
+     * Creates new Window-item, based on a specific itemstack with a specific callback.
+     * Window-items can be added to inventory-Windows (built by Window-builder). If a player clicks the Window-item, the callback is called with the player-object.
      *
      * @param itemStack item which should be displayed in the inventory
      * @param consumer  consumer which gets calles if a player clicks the item
-     * @return gui-item-object to add to the gui-builder
+     * @return Window-item-object to add to the Window-builder
      */
-    public static WindowItem createGuiItem(ItemStack itemStack, Consumer<User> consumer) {
-        return server.guiItem(itemStack, consumer);
+    public static WindowItem createWindowItem(ItemStack itemStack, Consumer<User> consumer) {
+        return server.windowItem(itemStack, consumer);
     }
 
     /**
-     * Creates new gui-item, based on a specific itemstack with a specific callback.
-     * Gui-items can be added to inventory-guis (built by gui-builder). If a player clicks the gui-item, the callback is called with the player-object.
+     * Creates new Window-item, based on a specific itemstack with a specific callback.
+     * Window-items can be added to inventory-Windows (built by Window-builder). If a player clicks the Window-item, the callback is called with the player-object.
      *
      * @param itemBuilder item which should be displayed in the inventory
      * @param consumer    consumer which gets calles if a player clicks the item
-     * @return gui-item-object to add to the gui-builder
+     * @return Window-item-object to add to the Window-builder
      */
-    public static WindowItem createGuiItem(ItemBuilder itemBuilder, Consumer<User> consumer) {
-        return server.guiItem(itemBuilder.build(), consumer);
+    public static WindowItem createWindowItem(ItemBuilder itemBuilder, Consumer<User> consumer) {
+        return server.windowItem(itemBuilder.build(), consumer);
     }
 
     /**
-     * Creates new gui-item, based on a specific itemstack with a specific callback.
-     * Gui-items can be added to inventory-guis (built by gui-builder). If a player clicks the gui-item, the callback is called with the player-object.
+     * Creates new Window-item, based on a specific itemstack with a specific callback.
+     * Window-items can be added to inventory-Windows (built by Window-builder). If a player clicks the Window-item, the callback is called with the player-object.
      *
      * @param item     item which should be displayed in the inventory
      * @param consumer consumer which gets calles if a player clicks the item
-     * @return gui-item-object to add to the gui-builder
+     * @return Window-item-object to add to the Window-builder
      */
-    public static WindowItem createGuiItem(InterfaceItem item, Consumer<User> consumer) {
-        return server.guiItem(item.toItemStack(), consumer);
+    public static WindowItem createWindowItem(InterfaceItem item, Consumer<User> consumer) {
+        return server.windowItem(item.toItemStack(), consumer);
     }
 
     /**
-     * Creates new gui-item, based on a specific itemstack with a specific callback.
-     * Gui-items can be added to inventory-guis (built by gui-builder). If a player clicks the gui-item, the callback is called with the player-object.
+     * Creates new Window-item, based on a specific itemstack with a specific callback.
+     * Window-items can be added to inventory-Windows (built by Window-builder). If a player clicks the Window-item, the callback is called with the player-object.
      *
      * @param itemStack item which should be displayed in the inventory
      * @param consumer  consumer which gets calles if a player clicks the item
-     * @return gui-item-object to add to the gui-builder
+     * @return Window-item-object to add to the Window-builder
      */
-    public static WindowItem createGuiItem(ItemStack itemStack, BiConsumer<User, ClickType> consumer) {
-        return server.advancedGuiItem(itemStack, consumer);
+    public static WindowItem createWindowItem(ItemStack itemStack, BiConsumer<User, ClickType> consumer) {
+        return server.advancedWindowItem(itemStack, consumer);
     }
 
     /**
-     * Creates new gui-item, based on a specific itemstack with a specific callback.
-     * Gui-items can be added to inventory-guis (built by gui-builder). If a player clicks the gui-item, the callback is called with the player-object.
+     * Creates new Window-item, based on a specific itemstack with a specific callback.
+     * Window-items can be added to inventory-Windows (built by Window-builder). If a player clicks the Window-item, the callback is called with the player-object.
      *
      * @param itemBuilder item which should be displayed in the inventory
      * @param consumer    consumer which gets calles if a player clicks the item
-     * @return gui-item-object to add to the gui-builder
+     * @return Window-item-object to add to the Window-builder
      */
-    public static WindowItem createGuiItem(ItemBuilder itemBuilder, BiConsumer<User, ClickType> consumer) {
-        return server.advancedGuiItem(itemBuilder.build(), consumer);
+    public static WindowItem createWindowItem(ItemBuilder itemBuilder, BiConsumer<User, ClickType> consumer) {
+        return server.advancedWindowItem(itemBuilder.build(), consumer);
     }
 
     /**
-     * Creates new gui-item, based on a specific itemstack with a specific callback.
-     * Gui-items can be added to inventory-guis (built by gui-builder). If a player clicks the gui-item, the callback is called with the player-object.
+     * Creates new Window-item, based on a specific itemstack with a specific callback.
+     * Window-items can be added to inventory-Windows (built by Window-builder). If a player clicks the Window-item, the callback is called with the player-object.
      *
      * @param item     item which should be displayed in the inventory
      * @param consumer consumer which gets calles if a player clicks the item
-     * @return gui-item-object to add to the gui-builder
+     * @return Window-item-object to add to the Window-builder
      */
-    public static WindowItem createGuiItem(InterfaceItem item, BiConsumer<User, ClickType> consumer) {
-        return server.advancedGuiItem(item.toItemStack(), consumer);
+    public static WindowItem createWindowItem(InterfaceItem item, BiConsumer<User, ClickType> consumer) {
+        return server.advancedWindowItem(item.toItemStack(), consumer);
     }
 
     /**
-     * Creates new gui-item, based on a specific itemstack without any callback.
-     * Gui-items can be added to inventory-guis (built by gui-builder). If a player clicks the gui-item, the callback is called with the player-object.
+     * Creates new Window-item, based on a specific itemstack without any callback.
+     * Window-items can be added to inventory-Windows (built by Window-builder). If a player clicks the Window-item, the callback is called with the player-object.
      *
      * @param itemStack item which should be displayed in the inventory (use item-builder to create this item)
-     * @return gui-item-object to add to the gui-builder
+     * @return Window-item-object to add to the Window-builder
      */
-    public static WindowItem createGuiItem(ItemStack itemStack) {
-        return server.guiItem(itemStack, null);
+    public static WindowItem createWindowItem(ItemStack itemStack) {
+        return server.windowItem(itemStack, null);
     }
 
     /**
@@ -694,6 +694,6 @@ public final class Smart {
     @AllArgsConstructor
     public static class PosItem {
         private final int position;
-        private final WindowItem guiItem;
+        private final WindowItem WindowItem;
     }
 }

@@ -1,4 +1,4 @@
-package minevalley.smart.api.utils.gui;
+package minevalley.smart.api.utils.window;
 
 import minevalley.smart.api.User;
 import minevalley.smart.api.enums.InterfaceItem;

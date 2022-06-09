@@ -1,4 +1,4 @@
-package minevalley.smart.api.utils.gui;
+package minevalley.smart.api.utils.window;
 
 public interface Window {
 

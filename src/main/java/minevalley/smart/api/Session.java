@@ -1,6 +1,6 @@
 package minevalley.smart.api;
 
-import minevalley.smart.api.utils.gui.Window;
+import minevalley.smart.api.utils.window.Window;
 
 public interface Session {
 
