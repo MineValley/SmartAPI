@@ -4,7 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NonNull;
 import lombok.Setter;
-import minevalley.smart.api.economy.BankAccount;
 import minevalley.smart.api.enums.*;
 import minevalley.smart.api.enums.sounds.Sound;
 import net.md_5.bungee.api.chat.BaseComponent;
@@ -13,7 +12,7 @@ import org.bukkit.inventory.ItemStack;
 
 import java.util.function.Consumer;
 
-public interface User extends Registered {
+public interface User {
 
     /**
      * Gets the player-object of this user.
@@ -148,83 +147,6 @@ public interface User extends Registered {
      */
     void sendMessage(@NonNull BaseComponent[] baseComponent, @NonNull Notice notice);
 
-
-    /**
-     * Sends a message to this user like the default player.sendMessage()-method. Without any prefix or color.
-     *
-     * @param message  message to be send as string
-     * @param chatMenu menu to attach underneath the message
-     */
-    void sendMessage(@NonNull String message, ChatMenu chatMenu);
-
-    /**
-     * Sends a message to this user like the default player.sendMessage()-method. Without any prefix or color.
-     * The message includes a notice that the user can click to get more information about the message.
-     *
-     * @param message  message to be send as string
-     * @param chatMenu menu to attach underneath the message
-     * @param notice   notice that is sent to the user
-     */
-    void sendMessage(@NonNull String message, ChatMenu chatMenu, @NonNull Notice notice);
-
-    /**
-     * Sends a message to this user with a specific prefix.
-     *
-     * @param messageType type of prefix to be displayed in front of the message
-     * @param message     message to be send as string
-     * @param chatMenu    menu to attach underneath the message
-     */
-    void sendMessage(@NonNull MessageType messageType, @NonNull String message, ChatMenu chatMenu);
-
-    /**
-     * Sends a message to this user with a specific prefix.
-     * The message includes a notice that the user can click to get more information about the message.
-     *
-     * @param messageType type of prefix to be displayed in front of the message
-     * @param message     message to be send as string
-     * @param chatMenu    menu to attach underneath the message
-     * @param notice      notice that is sent to the user
-     */
-    void sendMessage(@NonNull MessageType messageType, @NonNull String message, ChatMenu chatMenu, @NonNull Notice notice);
-
-    /**
-     * Sends a message to this user with a specific prefix, using ComponentBuilders.
-     *
-     * @param messageType   type of prefix to be displayed in front of the message
-     * @param baseComponent message to be send as string
-     * @param chatMenu      menu to attach underneath the message
-     */
-    void sendMessage(@NonNull MessageType messageType, @NonNull BaseComponent[] baseComponent, ChatMenu chatMenu);
-
-    /**
-     * Sends a message to this user with a specific prefix, using ComponentBuilders.
-     * The message includes a notice that the user can click to get more information about the message.
-     *
-     * @param messageType   type of prefix to be displayed in front of the message
-     * @param baseComponent message to be send as string
-     * @param chatMenu      menu to attach underneath the message
-     * @param notice        notice that is sent to the user
-     */
-    void sendMessage(@NonNull MessageType messageType, @NonNull BaseComponent[] baseComponent, ChatMenu chatMenu, @NonNull Notice notice);
-
-    /**
-     * Sends a message to this user, with using ComponentBuilders. This way you can use hover and clickevents and can take advantage of the clickable messages.
-     *
-     * @param baseComponent base-component which can be created by "new ComponentBuilder().create()"
-     * @param chatMenu      menu to attach underneath the message
-     */
-    void sendMessage(@NonNull BaseComponent[] baseComponent, ChatMenu chatMenu);
-
-    /**
-     * Sends a message to this user, with using ComponentBuilders. This way you can use hover and clickevents and can take advantage of the clickable messages.
-     * The message includes a notice that the user can click to get more information about the message.
-     *
-     * @param baseComponent base-component which can be created by "new ComponentBuilder().create()"
-     * @param chatMenu      menu to attach underneath the message
-     * @param notice        notice that is sent to the user
-     */
-    void sendMessage(@NonNull BaseComponent[] baseComponent, ChatMenu chatMenu, @NonNull Notice notice);
-
     /**
      * Sends a message to the user providing useful side information. The user can click a button so that the message will not be sent the next time.
      *
@@ -260,23 +182,6 @@ public interface User extends Registered {
     void leaveInterface();
 
     // Accounts and socials
-
-    /**
-     * Gets the users bank account.
-     *
-     * @return users bank account
-     */
-    BankAccount getBankAccount();
-
-    /**
-     * Asks the user which bank account he wants to use (e. g. to pay sth)
-     * He can choose from every bank account he's permissioned to transfer money from.
-     * If he chooses nothing, the callback isn't called.
-     * If he's only permissioned to transfer money from one account, he will not be asked (The callback will be called immediately with the account).
-     *
-     * @param callback callback with the chosen bank account
-     */
-    void askForBankAccount(Consumer<BankAccount> callback);
 
     /**
      * Gets a list of the users friends unique ids

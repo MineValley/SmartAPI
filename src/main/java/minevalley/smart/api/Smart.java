@@ -3,22 +3,7 @@ package minevalley.smart.api;
 import com.google.gson.Gson;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NonNull;
-import minevalley.smart.api.corporations.Department;
-import minevalley.smart.api.corporations.Group;
-import minevalley.smart.api.database.DatabaseEntry;
-import minevalley.smart.api.database.DatabaseEntryCollection;
-import minevalley.smart.api.database.DatabaseTable;
-import minevalley.smart.api.database.Value;
-import minevalley.smart.api.economy.BankAccount;
 import minevalley.smart.api.enums.InterfaceItem;
-import minevalley.smart.api.modulepipeline.Container;
-import minevalley.smart.api.timing.Reminder;
-import minevalley.smart.api.timing.RepeatingTimer;
-import minevalley.smart.api.timing.Timer;
-import minevalley.smart.api.utils.ClickableMessage;
-import minevalley.smart.api.utils.Countdown;
-import minevalley.smart.api.utils.EventListener;
 import minevalley.smart.api.utils.ItemBuilder;
 import minevalley.smart.api.utils.gui.WindowBuilder;
 import minevalley.smart.api.utils.gui.WindowItem;
@@ -42,9 +27,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.scheduler.BukkitTask;
 
-import java.sql.ResultSet;
 import java.text.SimpleDateFormat;
-import java.time.DayOfWeek;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
@@ -342,24 +325,8 @@ public final class Smart {
         server.cancelTask(taskId);
     }
 
-    public static JavaPlugin getInstance() {
-        return server.getInstance();
-    }
-
-    public static void registerEvent(Class<? extends Event> cls, EventListener listener) {
-        server.registerEvent(cls, listener);
-    }
-
-    public static void unregisterEvent(Class<? extends Event> cls, EventListener listener) {
-        server.unregisterEvent(cls, listener);
-    }
-
     public static void registerListeners(Listener listener) {
         server.registerListeners(listener);
-    }
-
-    public static void sendPipelineContainer(String pipelineName, Container container) {
-        server.sendPipelineContainer(pipelineName, container);
     }
 
     /**
@@ -378,64 +345,6 @@ public final class Smart {
      */
     public static void sendTeamChatMessage(BaseComponent[] message) {
         server.sendTeamChatMessage(message);
-    }
-
-    /**
-     * Gets the specific database-entry from the given ResultSet, the tablename and the entrys index.
-     *
-     * @param tableName name of the table as string
-     * @param resultSet resultset
-     * @param index     index of the entry
-     * @return DatabaseEntry from the given parameters
-     */
-    public static DatabaseEntry getDatabaseEntry(String tableName, ResultSet resultSet, int index) {
-        return server.databaseEntry(tableName, resultSet, index);
-    }
-
-    /**
-     * Gets the specific database-entry from the specified table with the specified value in the column.
-     * If there are more than one entries, that math the given description, this gets the first one.
-     * If you want to get multiple entries, use database-collection, or database-table!
-     *
-     * @param tableName   name of the table as string
-     * @param searchValue value according to which the entries are filtered in a specific column
-     * @return the first database-entry that matches the given description
-     */
-    public static DatabaseEntry getDatabaseEntry(String tableName, Value searchValue) {
-        return server.databaseEntry(tableName, searchValue);
-    }
-
-    /**
-     * Creates a database-collection with the given entries.
-     *
-     * @param tableName name of the table as string
-     * @param entries   list of entries
-     * @return collection of the given entries
-     */
-    public static DatabaseEntryCollection getDatabaseEntryCollection(String tableName, List<DatabaseEntry> entries) {
-        return server.databaseEntryCollection(tableName, entries);
-    }
-
-    /**
-     * Gets a database-collection from the specified table with the specified value in the column.
-     * This gets all of the entries that match the description. If you're searching for one single entry, use database-entry!
-     *
-     * @param tableName   name of the table as string
-     * @param searchValue value according to which the entries are filtered in a specific column
-     * @return a collection of all database-entries in this table, that matches the given description
-     */
-    public static DatabaseEntryCollection getDatabaseEntryCollection(String tableName, Value searchValue) {
-        return server.databaseEntryCollection(tableName, searchValue);
-    }
-
-    /**
-     * Gets the database-table with the specific name.
-     *
-     * @param tableName name of the database-table
-     * @return database-table with specific name
-     */
-    public static DatabaseTable getDatabaseTable(String tableName) {
-        return server.databaseTable(tableName);
     }
 
     /**
@@ -555,46 +464,6 @@ public final class Smart {
      */
     public static String getUniqueId(String name) {
         return server.getUniqueId(name);
-    }
-
-    /**
-     * Removes the color-codes from a given string
-     *
-     * @param text string which could contain color-codes
-     * @return string without any color-codes
-     */
-    public static String removeColorCodes(String text) {
-        return server.removeColorCodes(text);
-    }
-
-    /**
-     * Converts chat-color-codes to normal color-codes (& -> §)
-     *
-     * @param text string which could contain chat-color-codes
-     * @return string with converted color-codes
-     */
-    public static String convertColorCodes(String text) {
-        return server.convertColorCodes(text);
-    }
-
-    /**
-     * Checks whether the given string contains a forbidden word.
-     *
-     * @param text text to check
-     * @return true, if string contains forbidden words
-     */
-    public static boolean containsForbiddenWords(String text) {
-        return server.containsForForbiddenWords(text);
-    }
-
-    /**
-     * Creates a {@link Gson} instance that fits in a page for pretty printing.
-     * Use this, to convert json-strings to specific objects and vice versa.
-     *
-     * @return an instance of Gson configured that fits in a page for pretty printing
-     */
-    public static Gson getGson() {
-        return server.getGson();
     }
 
     /**
@@ -753,61 +622,6 @@ public final class Smart {
     }
 
     /**
-     * Creates new countdown-object.
-     * Note: Don't use this method to realize cooldowns for player-actions. Use schedulers instead!
-     *
-     * @return new countdown-object
-     */
-    public static Countdown createCountdown() {
-        return server.createCountdown();
-    }
-
-    /**
-     * Starts the specific countdown.
-     *
-     * @param countdown countdown to start
-     */
-    public static void startCountdown(Countdown countdown) {
-        server.startCountdown(countdown);
-    }
-
-    /**
-     * Stops the specific countdown.
-     *
-     * @param countdown countdown to stop
-     */
-    public static void stopCountdown(Countdown countdown) {
-        server.stopCountdown(countdown);
-    }
-
-    /**
-     * Gets the servers main map.
-     *
-     * @return main map
-     */
-    public static World getMainWorld() {
-        return Bukkit.getWorld("world");
-    }
-
-    /**
-     * Gets the building map.
-     *
-     * @return building map
-     */
-    public static World getBuildingWorld() {
-        return Bukkit.getWorld("bauteam");
-    }
-
-    /**
-     * Gets the shadow map.
-     *
-     * @return shadow map
-     */
-    public static World getShadowMap() {
-        return Bukkit.getWorld("shadow");
-    }
-
-    /**
      * Creates a new item-builder based on a specific material.
      *
      * @param itemStack itemstack the item-builder will base on
@@ -874,256 +688,6 @@ public final class Smart {
      */
     public static ItemBuilder createItem(String url) {
         return server.createItem(url);
-    }
-
-    /**
-     * Creates the often used gray hover text to display a clickable message in chat.
-     *
-     * @param text text to be displayed
-     * @return HoverEvent object to be put into .event()
-     */
-    public static HoverEvent createHoverText(String text) {
-        return new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder(text).color(ChatColor.GRAY).create());
-    }
-
-    /**
-     * Creates a click event consisting of a clickable message.
-     *
-     * @param selfCancelling defines whether the message is clickable multiple times
-     * @param callback       is called if the player clicks the message
-     * @return ClickEvent object to be put into .event()
-     */
-    public static ClickEvent createClickEvent(boolean selfCancelling, Consumer<User> callback) {
-        return server.createClickEvent(selfCancelling, callback);
-    }
-
-    /**
-     * Creates a click event consisting of a clickable message.
-     * <p>
-     * <b>Note:</b> This clickable message is only clickable once! Use createClickEvent(boolean, Consumer) if you want to create it for multiple use.
-     *
-     * @param callback is called if the player clicks the message
-     * @return ClickEvent object to be put into .event()
-     */
-    public static ClickEvent createClickEvent(Consumer<User> callback) {
-        return server.createClickEvent(true, callback);
-    }
-
-    /**
-     * Creates a clickable message without any specifications.
-     *
-     * @return new clickable message
-     */
-    public static ClickableMessage createClickableMessage() {
-        return server.createClickableMessage();
-    }
-
-    /**
-     * Creates a clickable message that executes the given callback.
-     *
-     * @param callback callback to be executed if player clicks the message
-     * @return new clickable message
-     */
-    public static ClickableMessage createClickableMessage(Consumer<User> callback) {
-        return server.createClickableMessage(callback);
-    }
-
-    /**
-     * Creates a clickable message that executes the given callback, and is only clickable once (if selfCanselling is true).
-     *
-     * @param callback       callbacl to be executed if player clicks the message
-     * @param selfCancelling defines if the message is clickable multiple times
-     * @return new clickable message
-     */
-    public static ClickableMessage createClickableMessage(Consumer<User> callback, boolean selfCancelling) {
-        return server.createClickableMessage(callback, selfCancelling);
-    }
-
-    /**
-     * Creates a menu which can be send to users chat.
-     *
-     * @param options clickable options (message and clickable)
-     * @return new chat menu
-     */
-    public static ChatMenu createChatMenu(ChatMenu.Option... options) {
-        return server.createChatMenu(options);
-    }
-
-    /**
-     * Creates a menu which can be send to users chat.
-     *
-     * @return new chat menu
-     */
-    public static ChatMenu createChatMenu() {
-        return server.createChatMenu();
-    }
-
-    /**
-     * Converts an inventory that is converted to a string back into the usual inventory object.
-     *
-     * @param inventory string to convert to inventory
-     * @return inventory object
-     */
-    public static Inventory getInventoryFromString(String inventory) {
-        return server.getInventoryFromString(inventory);
-    }
-
-    /**
-     * Converts an inventory and its contents into a string. This method is used to save inventories to the database.
-     *
-     * @param inventory inventory to convert
-     * @return inventory from string
-     */
-    public static String getStringFromInventory(Inventory inventory) {
-        return server.getStringFromInventory(inventory);
-    }
-
-    /**
-     * Gets the bank account with the specific iban.
-     *
-     * @param iban iban as string
-     * @return bank account
-     */
-    public static BankAccount getBankAccount(String iban) {
-        return server.getBankAccount(iban);
-    }
-
-    /**
-     * Creates a new bank account with the given holder.
-     *
-     * @param holder holder of this bank account
-     * @return new bank account
-     */
-    public static BankAccount createBankAccount(Registered holder) {
-        return server.createBankAccount(holder);
-    }
-
-    /**
-     * Gets the group (organization/company) with the specific id.
-     *
-     * @param id id as integer
-     * @return group with the specific id
-     */
-    public static Group getGroup(int id) {
-        return server.getGroup(id);
-    }
-
-    /**
-     * Gets the group (organization/company) with the specific name.
-     *
-     * @param name name as string
-     * @return group with the specifc name
-     */
-    public static Group getGroup(String name) {
-        return server.getGroup(name);
-    }
-
-    /**
-     * Gets the registered object of a user.
-     *
-     * @param user user to get registered object from
-     * @return registered object of user
-     */
-    public static Registered getRegistered(User user) {
-        return server.getRegistered(user);
-    }
-
-    /**
-     * Gets the registered object of a group.
-     *
-     * @param group group to get registered object from
-     * @return registered object of group
-     */
-    public static Registered getRegistered(Group group) {
-        return server.getRegistered(group);
-    }
-
-    /**
-     * Gets the registered object of a department.
-     *
-     * @param department department to get registered object from
-     * @return registered object of department
-     */
-    public static Registered getRegistered(Department department) {
-        return server.getRegistered(department);
-    }
-
-    /**
-     * Gets the registered object that is represented by the specific string.
-     *
-     * @param rawRegistered registered as string
-     * @return represented registered
-     */
-    public static Registered getRegistered(String rawRegistered) {
-        return server.getRegistered(rawRegistered);
-    }
-
-    /**
-     * Starts a timer with the specific parameters.
-     *
-     * @param delay    delay after which this timer terminates
-     * @param callback callback that is called when this timer terminates
-     * @return timer with the specific parameters
-     */
-    public static Timer startTimer(int delay, @NonNull Runnable callback) {
-        return server.startTimer(delay, callback);
-    }
-
-    /**
-     * Starts a repeating timer with the specific parameters.
-     *
-     * @param delay    seconds to wait before the first period
-     * @param period   period in which this repeating timer is called
-     * @param callback callback that is called when this repeating timer reaches a period
-     * @return repeating timer with the specific parameters.
-     */
-    public static RepeatingTimer startRepeatingTimer(int delay, int period, @NonNull Runnable callback) {
-        return server.startRepeatingTimer(delay, period, callback);
-    }
-
-    /**
-     * Creates a reminder with the specific parameters.
-     *
-     * @param hours    hours on which this reminder is called
-     * @param minutes  minutes on which this reminder is called
-     * @param callback callback that is called when the given date/time is reached
-     * @param weekdays weekdays on which this reminder is active
-     * @return reminder with the specific parameters.
-     */
-    public static Reminder createReminder(int hours, int minutes, @NonNull Runnable callback, DayOfWeek... weekdays) {
-        return server.createReminder(hours, minutes, callback, weekdays);
-    }
-
-    /**
-     * Creates a reminder with the specific parameters.
-     *
-     * @param hours    hours on which this reminder is called
-     * @param minutes  minutes on which this reminder is called
-     * @param callback callback that is called when the given date/time is reached
-     * @param weekdays weekdays on which this reminder is active
-     * @return reminder with the specific parameters.
-     */
-    public static Reminder createReminder(int hours, int minutes, @NonNull Runnable callback, List<DayOfWeek> weekdays) {
-        return server.createReminder(hours, minutes, callback, weekdays);
-    }
-
-    /**
-     * Creates a new Discord Webhook.
-     *
-     * @param url URL of Webhook
-     * @return Webhook with given URL
-     */
-    public static Webhook createWebhook(String url) {
-        return server.createWebhook(url);
-    }
-
-    /**
-     * Creates an embedded message to be sent via webhook
-     *
-     * @return embedded message
-     */
-    public static Webhook.EmbeddedMessage createEmbeddedMessage() {
-        return server.createEmbeddedMessage();
     }
 
     /**
