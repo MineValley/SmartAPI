@@ -19,17 +19,21 @@ public abstract class SmartApp {
     }
 
     /**
-     * Is called when the module is enabled.
+     * Is called when the app is enabled.
      */
     public abstract void onEnable();
 
     /**
-     * Is called when the module is disabled.
+     * Is called when the app is disabled.
      */
     public void onDisable() {
 
     }
 
+    /**
+     * Is called whenever this app is opened by any user.
+     * @param session new created session
+     */
     public void onSessionCreate(Session session) {
 
     }
