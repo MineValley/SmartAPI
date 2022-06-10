@@ -8,5 +8,7 @@ public interface Session {
 
     void openWindow(Window window);
 
+    Window getCurrentWindow();
+
     void close();
 }

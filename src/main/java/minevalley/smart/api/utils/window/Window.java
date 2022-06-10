@@ -1,16 +1,14 @@
 package minevalley.smart.api.utils.window;
 
-public interface Window {
+import minevalley.smart.api.User;
 
-    Window update();
+import java.util.function.Consumer;
+
+public interface Window {
 
     Window updateItem(WindowItem guiItem);
 
     Window updateItem(WindowItem guiItem, WindowItem updateItem);
-
-    void clear();
-
-    void fix();
 
     void addItem(int slot, WindowItem guiItem);
 
@@ -19,4 +17,10 @@ public interface Window {
     void removeItem(WindowItem guiItem);
 
     WindowItem getItem(int slot);
+
+    void onReturn(Consumer<User> callback);
+
+    void onClose(Consumer<User> consumer);
+
+    void close();
 }
