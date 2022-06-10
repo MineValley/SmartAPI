@@ -33,17 +33,12 @@ public enum InterfaceItem {
     /**
      * Hides the selected slot and displays a green hook.
      */
-    HOOK(5),
+    CHECKMARK(5),
 
     /**
      * Hides the selected slot and displays a red cross.
      */
     CROSS(6),
-
-    /**
-     * Hides the selected slot and displays a red cross. Mostly used on the eighth slot of an inventory to symbolize a close-button.
-     */
-    CLOSE(CROSS.getBuilder().setDisplayName("§c§lSchließen")),
 
     /**
      * Is used to scroll back a page in an inventory.
@@ -76,7 +71,7 @@ public enum InterfaceItem {
     BUTTON(12);
 
 
-    private final Object object;
+    private final int durability;
 
     /**
      * Gets the interface-item as an item-builder.
@@ -84,8 +79,7 @@ public enum InterfaceItem {
      * @return interface-item as item-builder
      */
     public ItemBuilder getBuilder() {
-        return (object instanceof ItemBuilder) ? (ItemBuilder) object : Smart.createItem(Material.WOOD_SWORD)
-                .setDurability((int) object).hideDurability().setDisplayName(" ");
+        return Smart.createItem(Material.WOOD_SWORD).setDurability(durability).hideDurability().setDisplayName(" ");
     }
 
     /**
