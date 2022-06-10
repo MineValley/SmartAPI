@@ -68,7 +68,12 @@ public enum InterfaceItem {
     /**
      * Hides the selected slot and displays the background of an button underneath.
      */
-    BUTTON(12);
+    BUTTON(12),
+
+    /**
+     * Is used to return an action or jump to the previous page.
+     */
+    RETURN(13);
 
 
     private final int durability;
