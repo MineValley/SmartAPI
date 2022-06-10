@@ -58,13 +58,6 @@ public interface User {
      */
     boolean isUsingLabyMod();
 
-    /**
-     * Gets the version this user is currently playing with.
-     *
-     * @return current version
-     */
-    McVersion getVersion();
-
     // Messages
 
     /**
