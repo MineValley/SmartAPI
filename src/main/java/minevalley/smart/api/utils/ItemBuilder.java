@@ -43,7 +43,7 @@ public interface ItemBuilder {
      *
      * @return this item-builder
      */
-    ItemBuilder hideDurability();
+    ItemBuilder hideAttributes();
 
     /**
      * Converts this builder with its parameters into an itemstack
