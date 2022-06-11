@@ -84,7 +84,7 @@ public enum InterfaceItem {
      * @return interface-item as item-builder
      */
     public ItemBuilder getBuilder() {
-        return Smart.createItem(Material.WOOD_SWORD).setDurability(durability).hideDurability().setDisplayName(" ");
+        return Smart.createItem(Material.WOOD_SWORD).setDurability(durability).hideAttributes().setDisplayName(" ");
     }
 
     /**
