@@ -73,7 +73,7 @@ public enum InterfaceItem {
     /**
      * Is used to return an action or jump to the previous page.
      */
-    RETURN(13);
+    RETURN(15);
 
 
     private final int durability;
