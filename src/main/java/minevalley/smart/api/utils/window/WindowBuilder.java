@@ -22,13 +22,13 @@ public interface WindowBuilder {
 
     WindowBuilder addItem(InterfaceItem item);
 
-    WindowBuilder addInterfaceItems(InterfaceItem item, int... slots);
+    WindowBuilder setInterfaceItems(InterfaceItem item, int... slots);
 
-    WindowBuilder addInterfaceItemsInRange(InterfaceItem item, int from, int to);
+    WindowBuilder setInterfaceItemsInRange(InterfaceItem item, int from, int to);
 
-    WindowBuilder onClose(Consumer<User> callback);
+    WindowBuilder onReturn(Consumer<User> callback);
 
-    WindowBuilder onCloseButton(Consumer<User> callback);
+    WindowBuilder onWindowMinimize(Consumer<User> callback);
 
     WindowItem getItem(int slot);
 

@@ -10,9 +10,9 @@ public interface Window {
 
     Window updateItem(WindowItem guiItem, WindowItem updateItem);
 
-    void addItem(int slot, WindowItem guiItem);
+    void setItem(int slot, WindowItem guiItem);
 
-    void addItem(WindowItem guiItem);
+    void setItem(WindowItem guiItem);
 
     void removeItem(WindowItem guiItem);
 

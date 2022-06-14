@@ -498,16 +498,6 @@ public final class Smart {
     }
 
     /**
-     * Creates new Window-builder based on a existing inventory.
-     *
-     * @param inventory inventory on which the Window-builder should base on
-     * @return new Window-builder
-     */
-    public static WindowBuilder createWindow(Inventory inventory) {
-        return server.window(inventory);
-    }
-
-    /**
      * Creates new Window-builder with the specific size.
      *
      * @param size size of the inventory (has to be a multiple of 9)
