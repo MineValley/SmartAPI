@@ -16,4 +16,8 @@ public @interface Description {
     String[] authors();
 
     String iconHead();
+
+    int price() default 0;
+
+    boolean preInstalled() default false;
 }
