@@ -2,10 +2,10 @@
 
 > **README.md**:
 >
-> latest change: _11.06.2022_
+> latest change: _14.06.2022_
 
 > **Core API**:
 >
-> version: _1.12
+> version: _1.13
 >
-> latest change: _11.06.2022_
+> latest change: _14.06.2022_
