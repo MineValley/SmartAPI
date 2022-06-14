@@ -4,8 +4,8 @@
 >
 > latest change: _14.06.2022_
 
-> **Core API**:
+> **Smart API**:
 >
-> version: _1.13
+> version: _1.13_
 >
 > latest change: _14.06.2022_
