@@ -12,8 +12,6 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.ClickType;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.metadata.MetadataValue;
-import org.bukkit.metadata.Metadatable;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.scheduler.BukkitTask;
 
@@ -320,24 +318,6 @@ public final class Smart {
     }
 
     /**
-     * Sends a message to all online team-members
-     *
-     * @param message message as string
-     */
-    public static void sendTeamChatMessage(String message) {
-        server.sendTeamChatMessage(message);
-    }
-
-    /**
-     * Sends a message to all online team-members
-     *
-     * @param message message as base-component (useful for clickable messages)
-     */
-    public static void sendTeamChatMessage(BaseComponent[] message) {
-        server.sendTeamChatMessage(message);
-    }
-
-    /**
      * Sets the setting with the given key.
      * <p>
      * <b>Note:</b> When using the settings-method, do never change the settings manually via database!
@@ -392,38 +372,6 @@ public final class Smart {
      */
     public static double getStatistic(String key) {
         return server.getStatistic(key);
-    }
-
-    /**
-     * Adds this object as a metadata to the metadatable object.
-     *
-     * @param metadatable object to which the metadata should be added
-     * @param key         key under which the metadata can be found
-     * @param value       object to be added as metadata
-     */
-    public static void setMetadata(Metadatable metadatable, String key, Object value) {
-        server.setMetadata(metadatable, key, value);
-    }
-
-    /**
-     * Removes all metadata-objects with the given key from the specifiy metadatable object.
-     *
-     * @param metadatable object from which the metadata should be removed
-     * @param key         object
-     */
-    public static void removeMetadata(Metadatable metadatable, String key) {
-        server.removeMetadata(metadatable, key);
-    }
-
-    /**
-     * Gets a list of all metadata-values in link to the object.
-     *
-     * @param metadatable object to get linked data from
-     * @param key         key of the metadata
-     * @return list of all metadata-values
-     */
-    public static List<MetadataValue> getMetadata(Metadatable metadatable, String key) {
-        return server.getMetadata(metadatable, key);
     }
 
     /**
@@ -497,13 +445,12 @@ public final class Smart {
     }
 
     /**
-     * Creates new Window-builder with the specific size.
+     * Creates new Window-builder.
      *
-     * @param size size of the inventory (has to be a multiple of 9)
      * @return new Window-builder
      */
-    public static WindowBuilder createWindow(int size) {
-        return server.window(size);
+    public static WindowBuilder createWindow() {
+        return server.window();
     }
 
     /**
@@ -514,8 +461,8 @@ public final class Smart {
      * @param posItems items to be placed on specific slots on every inventory
      * @return new Window-builder
      */
-    public static WindowBuilder createWindow(List<WindowItem> items, int size, String title, PosItem... posItems) {
-        return server.window(items, size, title, posItems);
+    public static WindowBuilder createWindow(List<WindowItem> items, String title, PosItem... posItems) {
+        return server.window(items, title, posItems);
     }
 
     /**

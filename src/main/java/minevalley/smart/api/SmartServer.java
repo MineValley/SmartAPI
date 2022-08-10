@@ -87,7 +87,7 @@ public interface SmartServer {
 
     WindowBuilder window();
 
-    WindowBuilder window(List<WindowItem> items, int size, String title, Smart.PosItem... posItems);
+    WindowBuilder window(List<WindowItem> items, String title, Smart.PosItem... posItems);
 
     WindowItem windowItem(ItemStack itemStack, Consumer<User> consumer);
 
