@@ -3,15 +3,11 @@ package minevalley.smart.api;
 import minevalley.smart.api.utils.ItemBuilder;
 import minevalley.smart.api.utils.window.WindowBuilder;
 import minevalley.smart.api.utils.window.WindowItem;
-import net.md_5.bungee.api.chat.BaseComponent;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.ClickType;
-import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.metadata.MetadataValue;
-import org.bukkit.metadata.Metadatable;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.scheduler.BukkitTask;
@@ -41,11 +37,9 @@ public interface SmartServer {
 
     int scheduleAsyncDelayedTask(Runnable runnable);
 
-
     BukkitTask runTask(Runnable runnable);
 
     BukkitTask runTaskAsync(Runnable runnable);
-
 
     BukkitTask runTaskTimer(long delay, long period, BukkitRunnable runnable);
 
@@ -55,7 +49,6 @@ public interface SmartServer {
 
     BukkitTask runTaskTimerAsync(long delay, long period, Runnable runnable);
 
-
     BukkitTask runTaskLater(long delay, BukkitRunnable runnable);
 
     BukkitTask runTaskLater(long delay, Runnable runnable);
@@ -64,7 +57,6 @@ public interface SmartServer {
 
     BukkitTask runTaskLaterAsync(long delay, Runnable runnable);
 
-
     boolean isCurrentlyRunning(int taskId);
 
     void cancelTask(int taskId);
@@ -72,10 +64,6 @@ public interface SmartServer {
     JavaPlugin getInstance();
 
     void registerListeners(Listener listener);
-
-    void sendTeamChatMessage(String message);
-
-    void sendTeamChatMessage(BaseComponent[] message);
 
     void setSetting(String key, String value);
 
@@ -87,12 +75,6 @@ public interface SmartServer {
 
     User getUser(Player player);
 
-    void setMetadata(Metadatable metadatable, String key, Object value);
-
-    void removeMetadata(Metadatable metadatable, String key);
-
-    List<MetadataValue> getMetadata(Metadatable metadatable, String key);
-
     String getName(String uniqueId);
 
     String getUniqueId(String name);
@@ -103,9 +85,7 @@ public interface SmartServer {
 
     String formatMoney(double amount);
 
-    WindowBuilder window(Inventory inventory);
-
-    WindowBuilder window(int size);
+    WindowBuilder window();
 
     WindowBuilder window(List<WindowItem> items, int size, String title, Smart.PosItem... posItems);
 

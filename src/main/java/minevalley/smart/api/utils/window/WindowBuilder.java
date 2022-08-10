@@ -32,7 +32,5 @@ public interface WindowBuilder {
 
     WindowItem getItem(int slot);
 
-    int getSize();
-
     Window build();
 }

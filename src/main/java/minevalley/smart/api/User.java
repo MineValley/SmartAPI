@@ -50,14 +50,6 @@ public interface User {
      */
     ItemStack getPlayerHead();
 
-    /**
-     * Gets whether this user is currently logged in via labymod.
-     * <b>Note:</b> When joining, this boolean isn't set immediately. Make sure to use a delay, when using this method in a PlayerJoinListener!
-     *
-     * @return true, if this user is using labymod
-     */
-    boolean isUsingLabyMod();
-
     // Messages
 
     /**
@@ -276,20 +268,6 @@ public interface User {
     boolean hasTeamRank(@NonNull TeamRank... ranks);
 
     /**
-     * Gets whether the user is allowed to use a general-key
-     *
-     * @return true, if the player is allowed to use a general-key
-     */
-    boolean isAllowedToUseGeneralKey();
-
-    /**
-     * Gets whether the user is allowed to enter the support-service.
-     *
-     * @return true, if the user is allowed to enter the support-service
-     */
-    boolean canEnterSupportService();
-
-    /**
      * Gets whether the user is marked as server-operator (!= OP-permission)
      *
      * @return true, if the user is marked as server-operator
@@ -379,13 +357,6 @@ public interface User {
      * @return true, if the user reached the maximum idle time
      */
     boolean isIdle();
-
-    /**
-     * Gets whether this user is vanished (only team members can be vanished).
-     *
-     * @return true, if this user is vanished
-     */
-    boolean isVanish();
 
     /**
      * Gets whether the user is locked up in one of the state prisons.
