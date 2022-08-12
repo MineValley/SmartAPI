@@ -20,4 +20,6 @@ public @interface Description {
     int price() default 0;
 
     boolean preInstalled() default false;
+
+    int priority() default 0;
 }
