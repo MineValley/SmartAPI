@@ -1,5 +1,6 @@
 package minevalley.smart.api;
 
+import minevalley.smart.api.enums.WindowSize;
 import minevalley.smart.api.utils.ItemBuilder;
 import minevalley.smart.api.utils.window.WindowBuilder;
 import minevalley.smart.api.utils.window.WindowItem;
@@ -85,7 +86,7 @@ public interface SmartServer {
 
     String formatMoney(double amount);
 
-    WindowBuilder window();
+    WindowBuilder window(WindowSize size);
 
     WindowBuilder window(List<WindowItem> items, String title, Smart.PosItem... posItems);
 

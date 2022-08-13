@@ -3,10 +3,10 @@ package minevalley.smart.api;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import minevalley.smart.api.enums.InterfaceItem;
+import minevalley.smart.api.enums.WindowSize;
 import minevalley.smart.api.utils.ItemBuilder;
 import minevalley.smart.api.utils.window.WindowBuilder;
 import minevalley.smart.api.utils.window.WindowItem;
-import net.md_5.bungee.api.chat.BaseComponent;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
@@ -450,7 +450,17 @@ public final class Smart {
      * @return new Window-builder
      */
     public static WindowBuilder createWindow() {
-        return server.window();
+        return server.window(WindowSize.FULLSCREEN);
+    }
+
+
+    /**
+     * Creates new Window-builder.
+     *
+     * @return new Window-builder
+     */
+    public static WindowBuilder createWindow(WindowSize size) {
+        return server.window(size);
     }
 
     /**
