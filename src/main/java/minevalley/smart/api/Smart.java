@@ -460,7 +460,7 @@ public final class Smart {
      * @return new Window-builder
      */
     public static WindowBuilder createWindow(WindowSize size) {
-        return server.window(size);
+        return server.window(size, server);
     }
 
     /**

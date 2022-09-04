@@ -19,8 +19,6 @@ public @interface Description {
 
     int price() default 0;
 
-    boolean endOnMinimize() default true;
-
     boolean preInstalled() default false;
 
     int priority() default 0;
