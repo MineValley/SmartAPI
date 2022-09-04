@@ -449,8 +449,8 @@ public final class Smart {
      *
      * @return new Window-builder
      */
-    public static WindowBuilder createWindow() {
-        return server.window(WindowSize.FULLSCREEN);
+    public static WindowBuilder createWindow(boolean endSessionOnMinimize) {
+        return server.window(WindowSize.FULLSCREEN, endSessionOnMinimize);
     }
 
 
@@ -459,8 +459,8 @@ public final class Smart {
      *
      * @return new Window-builder
      */
-    public static WindowBuilder createWindow(WindowSize size) {
-        return server.window(size, server);
+    public static WindowBuilder createWindow(WindowSize size, boolean endSessionOnMinimize) {
+        return server.window(size, endSessionOnMinimize);
     }
 
     /**

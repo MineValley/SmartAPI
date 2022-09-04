@@ -86,7 +86,7 @@ public interface SmartServer {
 
     String formatMoney(double amount);
 
-    WindowBuilder window(WindowSize size);
+    WindowBuilder window(WindowSize size, boolean endSessionOnMinimize);
 
     WindowBuilder window(List<WindowItem> items, String title, Smart.PosItem... posItems);
 
