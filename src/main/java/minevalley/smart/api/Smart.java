@@ -636,6 +636,10 @@ public final class Smart {
         return server.isMaintenance();
     }
 
+    public static SmartServer getServerInstance() {
+        return server;
+    }
+
     @Getter
     @AllArgsConstructor
     public static class PosItem {
