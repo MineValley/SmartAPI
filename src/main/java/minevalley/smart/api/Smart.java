@@ -467,7 +467,6 @@ public final class Smart {
      * Creates new Window-builder with the specific size.
      *
      * @param items    list of the items to display
-     * @param size     size of each inventory (has to be a multiple of 9)
      * @param posItems items to be placed on specific slots on every inventory
      * @return new Window-builder
      */

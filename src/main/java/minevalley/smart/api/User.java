@@ -365,6 +365,10 @@ public interface User {
      */
     boolean isImprisoned();
 
+    long getLatestJoin();
+
+    String getLatestJoinFormatted();
+
     @Getter
     @Setter
     @AllArgsConstructor
