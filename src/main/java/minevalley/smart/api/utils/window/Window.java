@@ -18,6 +18,8 @@ public interface Window {
 
     WindowItem getItem(int slot);
 
+    void updateTitle(String title);
+
     void onReturn(Consumer<User> callback);
 
     void onClose(Consumer<User> consumer);
