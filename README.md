@@ -2,10 +2,10 @@
 
 > **README.md**:
 >
-> latest change: _04.11.2022_
+> latest change: _07.11.2022_
 
 > **Smart API**:
 >
-> version: _1.26_
+> version: _1.27_
 >
-> latest change: _04.11.2022_
+> latest change: _07.11.2022_
