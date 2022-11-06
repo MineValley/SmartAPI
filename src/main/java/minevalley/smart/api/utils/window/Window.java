@@ -2,9 +2,12 @@ package minevalley.smart.api.utils.window;
 
 import minevalley.smart.api.User;
 
+import java.util.List;
 import java.util.function.Consumer;
 
 public interface Window {
+
+    List<User> getViewingUsers();
 
     Window updateItem(WindowItem guiItem);
 
