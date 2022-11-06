@@ -639,6 +639,10 @@ public final class Smart {
         return server;
     }
 
+    public static List<Session> getAllSessions(SmartApp app) {
+        return server.getAllSessions(app);
+    }
+
     @Getter
     @AllArgsConstructor
     public static class PosItem {

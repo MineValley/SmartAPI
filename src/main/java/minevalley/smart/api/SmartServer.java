@@ -107,4 +107,6 @@ public interface SmartServer {
     ItemBuilder createItem(String url);
 
     boolean isMaintenance();
+
+    List<Session> getAllSessions(SmartApp app);
 }
