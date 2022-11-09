@@ -7,6 +7,8 @@ import minevalley.smart.api.utils.ItemBuilder;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 
+import java.util.Arrays;
+
 @RequiredArgsConstructor(access = AccessLevel.PRIVATE)
 public enum InterfaceItem {
 
@@ -120,6 +122,13 @@ public enum InterfaceItem {
      */
     public ItemBuilder getBuilder() {
         return Smart.createItem(Material.WOOD_SWORD).setDurability(durability).hideAttributes().setDisplayName(" ");
+    }
+
+    public static InterfaceItem getDigit(int digit) {
+        assert digit >= 0;
+        assert digit <= 9;
+        return Arrays.stream(InterfaceItem.values()).filter(interfaceItem -> interfaceItem.durability == 16 + digit)
+                .findFirst().orElse(null);
     }
 
     /**
