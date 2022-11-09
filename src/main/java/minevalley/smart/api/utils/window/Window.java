@@ -1,8 +1,10 @@
 package minevalley.smart.api.utils.window;
 
 import minevalley.smart.api.User;
+import org.bukkit.event.inventory.ClickType;
 
 import java.util.List;
+import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
 public interface Window {
@@ -28,4 +30,10 @@ public interface Window {
     void onClose(Consumer<User> consumer);
 
     void close();
+
+    void onSlotClick(int slot, BiConsumer<User, ClickType> callback);
+
+    void removeOnSlotClick(int slot);
+
+    BiConsumer<User, ClickType> getSlotCallback(int slot);
 }
