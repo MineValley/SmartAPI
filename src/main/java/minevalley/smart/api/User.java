@@ -369,6 +369,8 @@ public interface User {
 
     String getLatestJoinFormatted();
 
+    Session getSession(SmartApp app);
+
     @Getter
     @Setter
     @AllArgsConstructor
