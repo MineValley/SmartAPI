@@ -31,6 +31,8 @@ public interface Window {
 
     void close();
 
+    void moveAllUsersToNextWindow(Window window);
+
     void onSlotClick(int slot, BiConsumer<User, ClickType> callback);
 
     void removeOnSlotClick(int slot);
