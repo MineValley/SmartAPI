@@ -10,6 +10,7 @@ public abstract class SmartApp {
     @Getter
     private static SmartServer server;
 
+    @Getter
     private static SmartApp instance;
     private final Description description;
 
