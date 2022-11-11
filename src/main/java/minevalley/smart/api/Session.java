@@ -18,4 +18,6 @@ public interface Session {
     void close();
 
     void onEnd(Consumer<Session> callback);
+
+    void sendPurchaseOffer(PurchaseOffer offer);
 }
