@@ -13,8 +13,6 @@ public interface Session {
 
     Window getCurrentWindow();
 
-    void purchase(double price, ItemStack infoItem, Runnable onSuccess, Runnable onCancel);
-
     void close();
 
     void onEnd(Consumer<Session> callback);

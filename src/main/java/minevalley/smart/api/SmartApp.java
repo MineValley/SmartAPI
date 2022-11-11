@@ -9,10 +9,13 @@ public abstract class SmartApp {
 
     @Getter
     private static SmartServer server;
+
+    private final SmartApp instance;
     private final Description description;
 
     public SmartApp(SmartServer coreServer) {
         server = coreServer;
+        instance = this;
         this.description = Objects.requireNonNull(getClass().getAnnotation(Description.class),
                 "Description-Annotation nicht vorhanden! (SmartApp)");
         new Smart(server);
