@@ -25,7 +25,9 @@ public abstract class SmartApp {
     /**
      * Is called when the app is enabled.
      */
-    public abstract void onEnable();
+    public void onEnable() {
+
+    }
 
     /**
      * Is called when the app is disabled.
