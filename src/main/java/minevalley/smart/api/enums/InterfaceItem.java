@@ -77,7 +77,7 @@ public enum InterfaceItem {
     ARROWS(11),
 
     /**
-     * Hides the selected slot and displays the background of an button underneath.
+     * Hides the selected slot and displays the background of a button underneath.
      */
     BUTTON(12),
 
@@ -110,7 +110,7 @@ public enum InterfaceItem {
 
     DIGIT_9(25),
 
-    COLUMN(26);
+    COLON(26);
 
 
     private final int durability;
