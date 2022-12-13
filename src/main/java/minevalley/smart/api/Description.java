@@ -14,7 +14,7 @@ public @interface Description {
      */
     String name();
 
-    int id();
+    String systemName();
 
     /**
      * Version of development.
