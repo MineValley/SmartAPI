@@ -6,6 +6,6 @@
 
 > **Smart API**:
 >
-> version: _1.40_
+> version: _1.41_
 >
 > latest change: _13.12.2022_
