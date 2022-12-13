@@ -643,6 +643,10 @@ public final class Smart {
         return server.getAllSessions(app);
     }
 
+    public static SmartApp getSmartApp(String systemName) {
+        return server.getSmartApp(systemName);
+    }
+
     @Getter
     @AllArgsConstructor
     public static class PosItem {

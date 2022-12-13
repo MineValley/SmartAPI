@@ -109,4 +109,6 @@ public interface SmartServer {
     boolean isMaintenance();
 
     List<Session> getAllSessions(SmartApp app);
+
+    SmartApp getSmartApp(String systemName);
 }
