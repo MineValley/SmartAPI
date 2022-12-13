@@ -14,6 +14,8 @@ public @interface Description {
      */
     String name();
 
+    int id();
+
     /**
      * Version of development.
      * <p>
