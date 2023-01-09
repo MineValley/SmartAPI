@@ -82,9 +82,11 @@ public interface SmartServer {
 
     int randomInteger(int chars);
 
-    boolean isNumeric(String string);
+    boolean isInteger(String string);
 
-    String formatMoney(double amount);
+    boolean isDouble(String string);
+
+    String formatMoney(int amountInCents);
 
     WindowBuilder window(WindowSize size, boolean endSessionOnMinimize);
 

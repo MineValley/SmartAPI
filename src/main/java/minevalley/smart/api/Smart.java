@@ -422,18 +422,28 @@ public final class Smart {
      * @param string string to verify
      * @return true, if the given string is numeric
      */
-    public static boolean isNumeric(String string) {
-        return server.isNumeric(string);
+    public static boolean isInteger(String string) {
+        return server.isInteger(string);
     }
 
     /**
-     * Creates a readable string of the specific amount of money.
+     * Verifies that the given string is numeric and can be converted to a double.
      *
-     * @param amount amount to convert
-     * @return amount as x.xxx.xxx,xx€
+     * @param string string to verify
+     * @return true, if the given string is numeric
      */
-    public static String formatMoney(double amount) {
-        return server.formatMoney(amount);
+    public static boolean isDouble(String string) {
+        return server.isDouble(string);
+    }
+
+    /**
+     * Creates a readable string of the specific amountInCents of money.
+     *
+     * @param amountInCents amountInCents to convert
+     * @return amountInCents as x.xxx.xxx,xx€
+     */
+    public static String formatMoney(int amountInCents) {
+        return server.formatMoney(amountInCents);
     }
 
     public static String getFormattedDate(long time) {
