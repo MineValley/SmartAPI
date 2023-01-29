@@ -45,4 +45,8 @@ public abstract class SmartApp {
     public void onSessionCreate(Session session) {
 
     }
+
+    public static SmartApp getInstance(String systemName) {
+        return INSTANCES.get(systemName);
+    }
 }
