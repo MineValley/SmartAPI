@@ -385,7 +385,7 @@ public final class Smart {
     }
 
     /**
-     * Gets the name of the player with the specifc unique id
+     * Gets the name of the player with the specific unique id
      *
      * @param uniqueId unique id of the player
      * @return name of the player
@@ -405,7 +405,7 @@ public final class Smart {
     }
 
     /**
-     * Gets an random integer with the given length.
+     * Gets a random integer with the given length.
      *
      * @param chars number of chars
      * @return random integer
@@ -489,7 +489,7 @@ public final class Smart {
      * Window-items can be added to inventory-Windows (built by Window-builder). If a player clicks the Window-item, the callback is called with the player-object.
      *
      * @param itemStack item which should be displayed in the inventory
-     * @param consumer  consumer which gets calles if a player clicks the item
+     * @param consumer  consumer which gets called if a player clicks the item
      * @return Window-item-object to add to the Window-builder
      */
     public static WindowItem createWindowItem(ItemStack itemStack, Consumer<User> consumer) {
@@ -501,7 +501,7 @@ public final class Smart {
      * Window-items can be added to inventory-Windows (built by Window-builder). If a player clicks the Window-item, the callback is called with the player-object.
      *
      * @param itemBuilder item which should be displayed in the inventory
-     * @param consumer    consumer which gets calles if a player clicks the item
+     * @param consumer    consumer which gets called if a player clicks the item
      * @return Window-item-object to add to the Window-builder
      */
     public static WindowItem createWindowItem(ItemBuilder itemBuilder, Consumer<User> consumer) {
@@ -513,7 +513,7 @@ public final class Smart {
      * Window-items can be added to inventory-Windows (built by Window-builder). If a player clicks the Window-item, the callback is called with the player-object.
      *
      * @param item     item which should be displayed in the inventory
-     * @param consumer consumer which gets calles if a player clicks the item
+     * @param consumer consumer which gets called if a player clicks the item
      * @return Window-item-object to add to the Window-builder
      */
     public static WindowItem createWindowItem(InterfaceItem item, Consumer<User> consumer) {
@@ -525,7 +525,7 @@ public final class Smart {
      * Window-items can be added to inventory-Windows (built by Window-builder). If a player clicks the Window-item, the callback is called with the player-object.
      *
      * @param itemStack item which should be displayed in the inventory
-     * @param consumer  consumer which gets calles if a player clicks the item
+     * @param consumer  consumer which gets called if a player clicks the item
      * @return Window-item-object to add to the Window-builder
      */
     public static WindowItem createWindowItem(ItemStack itemStack, BiConsumer<User, ClickType> consumer) {
@@ -537,7 +537,7 @@ public final class Smart {
      * Window-items can be added to inventory-Windows (built by Window-builder). If a player clicks the Window-item, the callback is called with the player-object.
      *
      * @param itemBuilder item which should be displayed in the inventory
-     * @param consumer    consumer which gets calles if a player clicks the item
+     * @param consumer    consumer which gets called if a player clicks the item
      * @return Window-item-object to add to the Window-builder
      */
     public static WindowItem createWindowItem(ItemBuilder itemBuilder, BiConsumer<User, ClickType> consumer) {
@@ -549,7 +549,7 @@ public final class Smart {
      * Window-items can be added to inventory-Windows (built by Window-builder). If a player clicks the Window-item, the callback is called with the player-object.
      *
      * @param item     item which should be displayed in the inventory
-     * @param consumer consumer which gets calles if a player clicks the item
+     * @param consumer consumer which gets called if a player clicks the item
      * @return Window-item-object to add to the Window-builder
      */
     public static WindowItem createWindowItem(InterfaceItem item, BiConsumer<User, ClickType> consumer) {
