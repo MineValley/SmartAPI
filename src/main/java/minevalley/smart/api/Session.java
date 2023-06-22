@@ -1,7 +1,6 @@
 package minevalley.smart.api;
 
 import minevalley.smart.api.utils.window.Window;
-import org.bukkit.inventory.ItemStack;
 
 import java.util.function.Consumer;
 

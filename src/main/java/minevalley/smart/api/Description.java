@@ -35,7 +35,7 @@ public @interface Description {
     /**
      * id of the head which will be used as an app icon in app store and phone menu.
      * <p>
-     * <b>Attention:</b> In order to maintain the recognizability of the apps, make sure that the head is not yet used in another app!
+     * <b>Attention:</b> In order to maintain the distinctness of the apps, make sure that the head is not yet used in another app!
      * </p>
      */
     String iconHead();
@@ -46,7 +46,7 @@ public @interface Description {
     int price() default 0;
 
     /**
-     * If true, this app will be preinstalled on everyones phone.
+     * If true, this app will be preinstalled on everyone's phone.
      * <p>
      * <b>Note:</b> This is only available for apps that are a must-have feature. It should not be used to increase the popularity of apps that are not essential.
      * </p>

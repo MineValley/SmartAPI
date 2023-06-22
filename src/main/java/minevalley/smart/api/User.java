@@ -67,7 +67,7 @@ public interface User {
     /**
      * Sends a message to this user like the default player.sendMessage()-method. Without any prefix or color.
      *
-     * @param message message to be send as string
+     * @param message message to be sent as string
      */
     void sendMessage(@NonNull String message);
 
@@ -75,7 +75,7 @@ public interface User {
      * Sends a message to this user like the default player.sendMessage()-method. Without any prefix or color.
      * The message includes a notice that the user can click to get more information about the message.
      *
-     * @param message message to be send as string
+     * @param message message to be sent as string
      * @param notice  notice that is sent to the user
      */
     void sendMessage(@NonNull String message, @NonNull Notice notice);
@@ -84,7 +84,7 @@ public interface User {
      * Sends a message to this user with a specific prefix.
      *
      * @param messageType type of prefix to be displayed in front of the message
-     * @param message     message to be send as string
+     * @param message     message to be sent as string
      */
     void sendMessage(@NonNull MessageType messageType, @NonNull String message);
 
@@ -93,7 +93,7 @@ public interface User {
      * The message includes a notice that the user can click to get more information about the message.
      *
      * @param messageType type of prefix to be displayed in front of the message
-     * @param message     message to be send as string
+     * @param message     message to be sent as string
      * @param notice      notice that is sent to the user
      */
     void sendMessage(@NonNull MessageType messageType, @NonNull String message, @NonNull Notice notice);
@@ -102,7 +102,7 @@ public interface User {
      * Sends a message to this user with a specific prefix, using ComponentBuilders.
      *
      * @param messageType   type of prefix to be displayed in front of the message
-     * @param baseComponent message to be send as string
+     * @param baseComponent message to be sent as string
      */
     void sendMessage(@NonNull MessageType messageType, @NonNull BaseComponent[] baseComponent);
 
@@ -111,7 +111,7 @@ public interface User {
      * The message includes a notice that the user can click to get more information about the message.
      *
      * @param messageType   type of prefix to be displayed in front of the message
-     * @param baseComponent message to be send as string
+     * @param baseComponent message to be sent as string
      * @param notice        notice that is sent to the user
      */
     void sendMessage(@NonNull MessageType messageType, @NonNull BaseComponent[] baseComponent, @NonNull Notice notice);
@@ -140,7 +140,7 @@ public interface User {
     void sendMessage(@NonNull Notice notice);
 
     /**
-     * Sends the usual "Unbekannter Befehl!"-error to the user. Mostly used when a player is trying to execute an command that they are not allowed to do.
+     * Sends the usual "Unbekannter Befehl!"-error to the user. Mostly used when a player is trying to execute a command that they are not allowed to do.
      */
     void sendError();
 
@@ -149,8 +149,8 @@ public interface User {
     /**
      * Asks the player for any type of input via a chat-interface. The player can leave this interface. If he writes something into this interface, the callback gets called.
      *
-     * @param message  the message to be send to the player. Normally containing a question or a request to put in any data
-     * @param callback the callback that is called when the player makes an entry in the chat-interface. The consumer contains a string of the sent message.
+     * @param message  the message to be sent to the player. Normally containing a question or a request to put in any data
+     * @param callback the callback that is called when the player makes an entry in the chat-interface. The consumer contains a string of the message.
      */
     void input(@NonNull String message, @NonNull Consumer<String> callback);
 
@@ -171,21 +171,21 @@ public interface User {
     /**
      * Gets a list of the users friends unique ids
      *
-     * @return list of the users friends unique ids as strings
+     * @return array of the users friends unique ids as strings
      */
     String[] getFriends();
 
     /**
-     * Gets a list of the unique ids of this users spouses
+     * Gets a list of the unique ids of this user's spouses
      *
-     * @return list of the users spouses unique ids as strings
+     * @return array of the users spouses unique ids as strings
      */
     String[] getMarriage();
 
     /**
      * Gets a list of the blocked users unique ids
      *
-     * @return list of the users unique ids, which were blocked at this users bell, as strings
+     * @return array of the users unique ids, which were blocked at this users bell, as strings
      */
     String[] getBellBlacklist();
 
@@ -211,7 +211,7 @@ public interface User {
     /**
      * Updates the value of a specific setting.
      * <p>
-     * <b>Note:</b> Neither the key nor the value must not contain non alphabetic characters! Otherwise the this method will not work properly...
+     * <b>Note:</b> Neither the key nor the value must not contain non-alphabetic characters! Otherwise, this method will not work properly...
      *
      * @param key      key of the setting
      * @param newValue new value of the setting
@@ -221,7 +221,7 @@ public interface User {
     // FractionService
 
     /**
-     * Gets the users fraction.
+     * Gets the user's fraction.
      * Note: The user must be in fraction-service, otherwise this is NONE
      *
      * @return users fraction
@@ -284,16 +284,16 @@ public interface User {
     // Education
 
     /**
-     * Gets a list of the users education.
+     * Gets a list of the user's education.
      *
-     * @return list of users education
+     * @return array of users education
      */
     Education[] getEducation();
 
     /**
      * Gets a list of the active products, that this user bought.
      *
-     * @return list of purchases
+     * @return array of purchases
      */
     Purchase[] getPurchased();
 
@@ -313,9 +313,9 @@ public interface User {
     boolean hasEducation(Education education);
 
     /**
-     * Gets whether the user has a drivers license.
+     * Gets whether the user has a driver's license.
      *
-     * @return true, if the user has a drivers license
+     * @return true, if the user has a driver's license
      */
     boolean hasDriversLicense();
 
@@ -329,7 +329,7 @@ public interface User {
     // Cash
 
     /**
-     * Gets the current amount of cash in the users wallet.
+     * Gets the current amount of cash in the user's wallet.
      *
      * @return the current amount of cash in the users wallet
      */
