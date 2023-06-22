@@ -20,49 +20,19 @@ import java.util.function.Consumer;
 
 public interface SmartServer {
 
-    int scheduleSyncRepeatingTask(long delay, long period, BukkitRunnable runnable);
+    JavaPlugin getInstance();
 
-    int scheduleSyncRepeatingTask(long delay, long period, Runnable runnable);
+    int runSyncTaskLater(String taskName, long delay, Runnable runnable);
 
-    int scheduleAsyncRepeatingTask(long delay, long period, Runnable runnable);
+    int runAsyncTaskLater(String taskName, long delay, Runnable runnable);
 
-    int scheduleSyncDelayedTask(long delay, BukkitRunnable runnable);
+    int runSyncTaskPeriodically(String taskName, long delay, long period, Runnable runnable);
 
-    int scheduleSyncDelayedTask(long delay, Runnable runnable);
-
-    int scheduleSyncDelayedTask(BukkitRunnable runnable);
-
-    int scheduleSyncDelayedTask(Runnable runnable);
-
-    int scheduleAsyncDelayedTask(long delay, Runnable runnable);
-
-    int scheduleAsyncDelayedTask(Runnable runnable);
-
-    BukkitTask runTask(Runnable runnable);
-
-    BukkitTask runTaskAsync(Runnable runnable);
-
-    BukkitTask runTaskTimer(long delay, long period, BukkitRunnable runnable);
-
-    BukkitTask runTaskTimer(long delay, long period, Runnable runnable);
-
-    BukkitTask runTaskTimerAsync(long delay, long period, BukkitRunnable runnable);
-
-    BukkitTask runTaskTimerAsync(long delay, long period, Runnable runnable);
-
-    BukkitTask runTaskLater(long delay, BukkitRunnable runnable);
-
-    BukkitTask runTaskLater(long delay, Runnable runnable);
-
-    BukkitTask runTaskLaterAsync(long delay, BukkitRunnable runnable);
-
-    BukkitTask runTaskLaterAsync(long delay, Runnable runnable);
+    int runAsyncTaskPeriodically(String taskName, long delay, long period, Runnable runnable);
 
     boolean isCurrentlyRunning(int taskId);
 
     void cancelTask(int taskId);
-
-    JavaPlugin getInstance();
 
     void registerListeners(Listener listener);
 
