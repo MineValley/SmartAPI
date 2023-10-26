@@ -1,5 +1,6 @@
 package minevalley.smart.api;
 
+import com.google.gson.Gson;
 import minevalley.smart.api.enums.WindowSize;
 import minevalley.smart.api.utils.ItemBuilder;
 import minevalley.smart.api.utils.window.WindowBuilder;
@@ -81,4 +82,6 @@ public interface SmartServer {
     List<Session> getAllSessions(SmartApp app);
 
     SmartApp getSmartApp(String systemName);
+
+    Gson getGson();
 }

@@ -1,5 +1,6 @@
 package minevalley.smart.api;
 
+import com.google.gson.Gson;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import minevalley.smart.api.enums.InterfaceItem;
@@ -575,6 +576,16 @@ public final class Smart {
 
     public static SmartApp getSmartApp(String systemName) {
         return server.getSmartApp(systemName);
+    }
+
+    /**
+     * Creates a {@link Gson} instance that fits in a page for pretty printing.
+     * Use this, to convert json-strings to specific objects and vice versa.
+     *
+     * @return an instance of Gson configured that fits in a page for pretty printing
+     */
+    public static Gson getGson() {
+        return server.getGson();
     }
 
     @Getter
