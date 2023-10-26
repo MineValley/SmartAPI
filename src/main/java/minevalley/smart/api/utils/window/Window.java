@@ -1,7 +1,9 @@
 package minevalley.smart.api.utils.window;
 
 import minevalley.smart.api.User;
+import minevalley.smart.api.enums.InterfaceItem;
 import org.bukkit.event.inventory.ClickType;
+import org.bukkit.inventory.ItemStack;
 
 import java.util.List;
 import java.util.function.BiConsumer;
@@ -15,21 +17,31 @@ public interface Window {
 
     Window updateItem(WindowItem guiItem, WindowItem updateItem);
 
-    void setItem(int slot, WindowItem guiItem);
+    Window setItem(int slot, WindowItem guiItem);
 
-    void setItem(WindowItem guiItem);
+    Window setItem(int slot, ItemStack itemStack);
+
+    Window setItem(int slot, InterfaceItem item);
+
+    Window addItem(WindowItem guiItem);
+
+    Window addItem(ItemStack itemStack);
+
+    Window addItem(InterfaceItem item);
+
+    Window setInterfaceItems(InterfaceItem item, int... slots);
+
+    Window setInterfaceItemsInRange(InterfaceItem item, int from, int to);
+
+    Window onWindowMinimize(Consumer<User> callback);
 
     void removeItem(WindowItem guiItem);
 
     WindowItem getItem(int slot);
 
-    void updateTitle(String title);
-
     void onReturn(Consumer<User> callback);
 
     void onClose(Consumer<User> consumer);
-
-    void close();
 
     void moveAllUsersToNextWindow(Window window);
 
