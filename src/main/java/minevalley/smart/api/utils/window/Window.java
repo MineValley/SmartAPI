@@ -17,23 +17,23 @@ public interface Window {
 
     Window updateItem(WindowItem guiItem, WindowItem updateItem);
 
-    Window setItem(int slot, WindowItem guiItem);
+    void setItem(int slot, WindowItem guiItem);
 
-    Window setItem(int slot, ItemStack itemStack);
+    void setItem(int slot, ItemStack itemStack);
 
-    Window setItem(int slot, InterfaceItem item);
+    void setItem(int slot, InterfaceItem item);
 
-    Window addItem(WindowItem guiItem);
+    void addItem(WindowItem guiItem);
 
-    Window addItem(ItemStack itemStack);
+    void addItem(ItemStack itemStack);
 
-    Window addItem(InterfaceItem item);
+    void addItem(InterfaceItem item);
 
-    Window setInterfaceItems(InterfaceItem item, int... slots);
+    void setInterfaceItems(InterfaceItem item, int... slots);
 
-    Window setInterfaceItemsInRange(InterfaceItem item, int from, int to);
+    void setInterfaceItemsInRange(InterfaceItem item, int from, int to);
 
-    Window onWindowMinimize(Consumer<User> callback);
+    void onWindowMinimize(Consumer<User> callback);
 
     void removeItem(WindowItem guiItem);
 
