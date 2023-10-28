@@ -255,7 +255,6 @@ public final class Smart {
         return server.getSetting(key);
     }
 
-
     /**
      * Gets the settings with the specific key.
      *
@@ -264,8 +263,7 @@ public final class Smart {
      * @return setting as string from the specific key
      */
     public static String getSetting(String key, String defaultValue) {
-        final String result = server.getSetting(key);
-        return result == null ? defaultValue : result;
+        return Optional.ofNullable(getSetting(key)).orElse(defaultValue);
     }
 
     public static String getUserSetting(String uniqueId, String key) {
