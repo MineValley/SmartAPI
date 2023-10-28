@@ -290,7 +290,6 @@ public final class Smart {
         return server.window(WindowSize.FULLSCREEN, endSessionOnMinimize);
     }
 
-
     /**
      * Creates new Window-builder.
      *
