@@ -16,10 +16,7 @@ import org.bukkit.event.inventory.ClickType;
 import org.bukkit.inventory.ItemStack;
 
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.List;
-import java.util.Locale;
-import java.util.UUID;
+import java.util.*;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
@@ -273,6 +270,10 @@ public final class Smart {
 
     public static String getUserSetting(String uniqueId, String key) {
         return server.getUserSetting(uniqueId, key);
+    }
+
+    public static String getUserSetting(String uniqueId, String key, String defaultValue) {
+        return Optional.ofNullable(getUserSetting(uniqueId, key)).orElse(defaultValue);
     }
 
     /**
