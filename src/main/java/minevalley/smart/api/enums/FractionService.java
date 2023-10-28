@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 
 import java.util.Arrays;
 
+@Deprecated
 @Getter
 @RequiredArgsConstructor(access = AccessLevel.PRIVATE)
 public enum FractionService {
