@@ -19,8 +19,6 @@ import java.util.function.Consumer;
 
 public interface SmartServer {
 
-    JavaPlugin getInstance();
-
     int runSyncTaskLater(String taskName, long delay, Runnable runnable);
 
     int runAsyncTaskLater(String taskName, long delay, Runnable runnable);
