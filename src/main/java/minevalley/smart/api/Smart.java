@@ -132,6 +132,7 @@ public final class Smart {
         server.cancelTask(taskId);
     }
 
+    @Deprecated
     public static void registerListeners(Listener listener) {
         server.registerListeners(listener);
     }
