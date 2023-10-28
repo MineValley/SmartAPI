@@ -20,7 +20,7 @@ public abstract class SmartApp {
         this.description = Objects.requireNonNull(getClass().getAnnotation(Description.class),
                 "Description-Annotation nicht vorhanden! (SmartApp)");
         INSTANCES.put(description.systemName(), this);
-        new Smart(server);
+        Smart.setServer(coreServer);
     }
 
     /**

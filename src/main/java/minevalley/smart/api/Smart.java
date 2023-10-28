@@ -3,6 +3,7 @@ package minevalley.smart.api;
 import com.google.gson.Gson;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.Setter;
 import minevalley.smart.api.enums.InterfaceItem;
 import minevalley.smart.api.enums.WindowSize;
 import minevalley.smart.api.utils.ItemBuilder;
@@ -24,11 +25,8 @@ import java.util.function.Consumer;
 
 public final class Smart {
 
+    @Setter
     private static SmartServer server;
-
-    public Smart(SmartServer server) {
-        Smart.server = server;
-    }
 
     public static int runSyncTaskNow(String taskName, Runnable runnable) {
         return runSyncTaskLater(taskName, 0, runnable);
