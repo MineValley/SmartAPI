@@ -24,6 +24,13 @@ public abstract class SmartApp {
     }
 
     /**
+     * Is called whenever this app is opened by any user.
+     *
+     * @param session new created session
+     */
+    public abstract void onSessionCreate(Session session);
+
+    /**
      * Is called when the app is enabled.
      */
     public void onEnable() {
@@ -34,15 +41,6 @@ public abstract class SmartApp {
      * Is called when the app is disabled.
      */
     public void onDisable() {
-
-    }
-
-    /**
-     * Is called whenever this app is opened by any user.
-     *
-     * @param session new created session
-     */
-    public void onSessionCreate(Session session) {
 
     }
 
