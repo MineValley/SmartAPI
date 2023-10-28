@@ -12,7 +12,10 @@ public interface Session {
 
     Window getCurrentWindow();
 
+    @Deprecated
     void close();
+
+    void end();
 
     void onEnd(Consumer<Session> callback);
 
