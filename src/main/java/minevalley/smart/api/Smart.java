@@ -415,7 +415,7 @@ public final class Smart {
      * @param consumer  consumer which gets called if a player clicks the item
      * @return Window-item-object to add to the Window-builder
      */
-    public static WindowItem createWindowItem(ItemStack itemStack, Consumer<User> consumer) {
+    public static WindowItem createWindowItem(ItemStack itemStack, Consumer<Session> consumer) {
         return server.windowItem(itemStack, consumer);
     }
 
@@ -427,7 +427,7 @@ public final class Smart {
      * @param consumer    consumer which gets called if a player clicks the item
      * @return Window-item-object to add to the Window-builder
      */
-    public static WindowItem createWindowItem(ItemBuilder itemBuilder, Consumer<User> consumer) {
+    public static WindowItem createWindowItem(ItemBuilder itemBuilder, Consumer<Session> consumer) {
         return server.windowItem(itemBuilder.build(), consumer);
     }
 
@@ -439,7 +439,7 @@ public final class Smart {
      * @param consumer consumer which gets called if a player clicks the item
      * @return Window-item-object to add to the Window-builder
      */
-    public static WindowItem createWindowItem(InterfaceItem item, Consumer<User> consumer) {
+    public static WindowItem createWindowItem(InterfaceItem item, Consumer<Session> consumer) {
         return server.windowItem(item.toItemStack(), consumer);
     }
 
@@ -451,7 +451,7 @@ public final class Smart {
      * @param consumer  consumer which gets called if a player clicks the item
      * @return Window-item-object to add to the Window-builder
      */
-    public static WindowItem createWindowItem(ItemStack itemStack, BiConsumer<User, ClickType> consumer) {
+    public static WindowItem createWindowItem(ItemStack itemStack, BiConsumer<Session, ClickType> consumer) {
         return server.advancedWindowItem(itemStack, consumer);
     }
 
@@ -463,7 +463,7 @@ public final class Smart {
      * @param consumer    consumer which gets called if a player clicks the item
      * @return Window-item-object to add to the Window-builder
      */
-    public static WindowItem createWindowItem(ItemBuilder itemBuilder, BiConsumer<User, ClickType> consumer) {
+    public static WindowItem createWindowItem(ItemBuilder itemBuilder, BiConsumer<Session, ClickType> consumer) {
         return server.advancedWindowItem(itemBuilder.build(), consumer);
     }
 
@@ -475,7 +475,7 @@ public final class Smart {
      * @param consumer consumer which gets called if a player clicks the item
      * @return Window-item-object to add to the Window-builder
      */
-    public static WindowItem createWindowItem(InterfaceItem item, BiConsumer<User, ClickType> consumer) {
+    public static WindowItem createWindowItem(InterfaceItem item, BiConsumer<Session, ClickType> consumer) {
         return server.advancedWindowItem(item.toItemStack(), consumer);
     }
 

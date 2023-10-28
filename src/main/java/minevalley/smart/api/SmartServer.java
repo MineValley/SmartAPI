@@ -62,9 +62,9 @@ public interface SmartServer {
 
     WindowBuilder window(List<WindowItem> items, String title, Smart.PosItem... posItems);
 
-    WindowItem windowItem(ItemStack itemStack, Consumer<User> consumer);
+    WindowItem windowItem(ItemStack itemStack, Consumer<Session> consumer);
 
-    WindowItem advancedWindowItem(ItemStack itemStack, BiConsumer<User, ClickType> consumer);
+    WindowItem advancedWindowItem(ItemStack itemStack, BiConsumer<Session, ClickType> consumer);
 
     ItemBuilder createItem(ItemStack itemStack);
 
