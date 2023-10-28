@@ -17,7 +17,10 @@ public interface Session {
 
     void end();
 
+    @Deprecated
     void onEnd(Consumer<Session> callback);
+
+    void onEnd(Runnable runnable);
 
     void sendPurchaseOffer(PurchaseOffer offer);
 }
