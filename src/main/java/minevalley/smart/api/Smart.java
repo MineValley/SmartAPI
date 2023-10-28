@@ -271,6 +271,10 @@ public final class Smart {
         return result == null ? defaultValue : result;
     }
 
+    public static String getUserSetting(String uniqueId, String key) {
+        return server.getUserSetting(uniqueId, key);
+    }
+
     /**
      * Updates a statistic with the given key.
      * <p>
@@ -299,6 +303,7 @@ public final class Smart {
      * @param player player object to get user from
      * @return user object of the given player
      */
+    @Deprecated
     public static User getUser(Player player) {
         return server.getUser(player);
     }

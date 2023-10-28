@@ -39,6 +39,8 @@ public interface SmartServer {
 
     String getSetting(String key);
 
+    String getUserSetting(String uniqueId, String key);
+
     void updateStatistic(String key, double value);
 
     double getStatistic(String key);
