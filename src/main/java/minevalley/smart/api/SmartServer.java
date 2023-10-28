@@ -45,6 +45,7 @@ public interface SmartServer {
 
     double getStatistic(String key);
 
+    @Deprecated
     User getUser(Player player);
 
     String getName(String uniqueId);
