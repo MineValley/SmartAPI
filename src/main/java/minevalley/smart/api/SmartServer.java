@@ -7,7 +7,6 @@ import minevalley.smart.api.utils.window.WindowBuilder;
 import minevalley.smart.api.utils.window.WindowItem;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
-import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.ClickType;
 import org.bukkit.inventory.ItemStack;
 
@@ -29,8 +28,6 @@ public interface SmartServer {
     boolean isCurrentlyRunning(int taskId);
 
     void cancelTask(int taskId);
-
-    void registerListeners(Listener listener);
 
     void setSetting(String key, String value);
 
