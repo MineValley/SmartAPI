@@ -132,11 +132,6 @@ public final class Smart {
         server.cancelTask(taskId);
     }
 
-    @Deprecated
-    public static void registerListeners(Listener listener) {
-        server.registerListeners(listener);
-    }
-
     /**
      * Sets the setting with the given key.
      * <p>
@@ -198,17 +193,6 @@ public final class Smart {
      */
     public static double getStatistic(String key) {
         return server.getStatistic(key);
-    }
-
-    /**
-     * Gets a players user object
-     *
-     * @param player player object to get user from
-     * @return user object of the given player
-     */
-    @Deprecated
-    public static User getUser(Player player) {
-        return server.getUser(player);
     }
 
     /**

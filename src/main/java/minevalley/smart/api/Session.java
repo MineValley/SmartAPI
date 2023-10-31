@@ -6,22 +6,13 @@ import java.util.function.Consumer;
 
 public interface Session {
 
-    @Deprecated
-    User getUser();
-
     String getUserUniqueId();
 
     void openWindow(Window window);
 
     Window getCurrentWindow();
 
-    @Deprecated
-    void close();
-
     void end();
-
-    @Deprecated
-    void onEnd(Consumer<Session> callback);
 
     void onEnd(Runnable runnable);
 
