@@ -21,7 +21,7 @@ public interface Session {
     }
 
     default String getUserSetting(String key, String defaultValue) {
-        return Smart.getUserSetting(getUserUniqueId(), defaultValue);
+        return Smart.getUserSetting(getUserUniqueId(), key, defaultValue);
     }
 
     default void changeUserSetting(String key, String newValue) {
