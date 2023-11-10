@@ -24,6 +24,10 @@ public final class Smart {
     @Setter
     private static SmartServer server;
 
+    public static void sendDebug(String message) {
+        server.sendDebug(message);
+    }
+
     public static int runSyncTaskNow(String taskName, Runnable runnable) {
         return runSyncTaskLater(taskName, 0, runnable);
     }
