@@ -11,7 +11,6 @@ import minevalley.smart.api.utils.window.WindowBuilder;
 import minevalley.smart.api.utils.window.WindowItem;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
-import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.ClickType;
 import org.bukkit.inventory.ItemStack;
 
@@ -152,6 +151,10 @@ public final class Smart {
      */
     public static String getSetting(String key) {
         return server.getSetting(key);
+    }
+
+    public static void changeUserSetting(String uniqueId, String key, String newValue) {
+        server.changeUserSetting(uniqueId, key, newValue);
     }
 
     /**

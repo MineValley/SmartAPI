@@ -2,8 +2,6 @@ package minevalley.smart.api;
 
 import minevalley.smart.api.utils.window.Window;
 
-import java.util.function.Consumer;
-
 public interface Session {
 
     String getUserUniqueId();
@@ -24,5 +22,9 @@ public interface Session {
 
     default String getUserSetting(String key, String defaultValue) {
         return Smart.getUserSetting(getUserUniqueId(), defaultValue);
+    }
+
+    default void changeUserSetting(String key, String newValue) {
+        Smart.changeUserSetting(getUserUniqueId(), key, newValue);
     }
 }
