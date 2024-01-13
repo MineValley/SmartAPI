@@ -5,7 +5,7 @@ name: SmartAPI | Maven-deployer
 
 on:
   release: # Triggers this workflow whenever a new release is created.
-    type: [published]
+    types: [published]
 
 jobs:
   build:
