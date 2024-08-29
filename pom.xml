@@ -41,6 +41,9 @@
             <id>github</id>
             <name>GitHub MineValley Apache Maven Packages</name>
             <url>https://maven.pkg.github.com/MineValley/SmartAPI</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
         </repository>
     </distributionManagement>
 
