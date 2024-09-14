@@ -4,7 +4,7 @@ import com.google.gson.Gson;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
-import minevalley.core.api.smart.SmartApp;
+import minevalley.core.api.Core;
 import minevalley.smart.api.enums.InterfaceItem;
 import minevalley.smart.api.enums.WindowSize;
 import minevalley.smart.api.utils.ItemBuilder;
@@ -29,8 +29,8 @@ public final class Smart {
         server.sendDebug(message);
     }
 
-    public static int runSyncTaskNow(String taskName, Runnable runnable) {
-        return runSyncTaskLater(taskName, 0, runnable);
+    public static int runSyncTaskNow(Runnable runnable) {
+        return Core.runSyncTaskNow(runnable);
     }
 
     /**
@@ -44,8 +44,8 @@ public final class Smart {
      * @param runnable Task to be executed
      * @return Task id number (-1 if scheduling failed)
      */
-    public static int runAsyncTaskNow(String taskName, Runnable runnable) {
-        return runAsyncTaskLater(taskName, 0, runnable);
+    public static int runAsyncTaskNow(Runnable runnable) {
+        return Core.runAsyncTaskLater(0, runnable);
     }
 
     /**
@@ -58,8 +58,8 @@ public final class Smart {
      * @param runnable Task to be executed
      * @return Task id number (-1 if scheduling failed)
      */
-    public static int runSyncTaskLater(String taskName, long delay, Runnable runnable) {
-        return server.runSyncTaskLater(taskName, delay, runnable);
+    public static int runSyncTaskLater(long delay, Runnable runnable) {
+        return Core.runSyncTaskLater(delay, runnable);
     }
 
     /**
@@ -73,8 +73,8 @@ public final class Smart {
      * @param runnable Task to be executed
      * @return Task id number (-1 if scheduling failed)
      */
-    public static int runAsyncTaskLater(String taskName, long delay, Runnable runnable) {
-        return server.runAsyncTaskLater(taskName, delay, runnable);
+    public static int runAsyncTaskLater(long delay, Runnable runnable) {
+        return Core.runAsyncTaskLater(delay, runnable);
     }
 
     /**
@@ -88,8 +88,8 @@ public final class Smart {
      * @param runnable Task to be executed
      * @return Task id number (-1 if scheduling failed)
      */
-    public static int runSyncTaskPeriodically(String taskName, long delay, long period, Runnable runnable) {
-        return server.runSyncTaskPeriodically(taskName, delay, period, runnable);
+    public static int runSyncTaskPeriodically(long delay, long period, Runnable runnable) {
+        return Core.runSyncTaskPeriodically(delay, period, runnable);
     }
 
     /**
@@ -106,8 +106,8 @@ public final class Smart {
      * @return Task id number (-1 if scheduling failed)
      * task, but rather, "an async" task
      */
-    public static int runAsyncTaskPeriodically(String taskName, long delay, long period, Runnable runnable) {
-        return server.runAsyncTaskPeriodically(taskName, delay, period, runnable);
+    public static int runAsyncTaskPeriodically(long delay, long period, Runnable runnable) {
+        return Core.runAsyncTaskPeriodically(delay, period, runnable);
     }
 
     /**
@@ -124,7 +124,7 @@ public final class Smart {
      * @return If the task is currently running.
      */
     public static boolean isCurrentlyRunning(int taskId) {
-        return server.isCurrentlyRunning(taskId);
+        return Core.isCurrentlyRunning(taskId);
     }
 
     /**
@@ -133,7 +133,7 @@ public final class Smart {
      * @param taskId Id number of task to be removed
      */
     public static void cancelTask(int taskId) {
-        server.cancelTask(taskId);
+        Core.cancelTask(taskId);
     }
 
     /**

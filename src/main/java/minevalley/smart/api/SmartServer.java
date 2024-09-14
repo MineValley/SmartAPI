@@ -1,7 +1,6 @@
 package minevalley.smart.api;
 
 import com.google.gson.Gson;
-import minevalley.core.api.smart.SmartApp;
 import minevalley.smart.api.enums.WindowSize;
 import minevalley.smart.api.utils.ItemBuilder;
 import minevalley.smart.api.utils.window.WindowBuilder;

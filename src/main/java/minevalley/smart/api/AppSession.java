@@ -1,6 +1,5 @@
 package minevalley.smart.api;
 
-import minevalley.core.api.smart.Session;
 import minevalley.smart.api.utils.window.Window;
 
 public interface AppSession extends Session {
