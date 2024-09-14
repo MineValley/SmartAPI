@@ -7,7 +7,7 @@
     <name>SmartAPI</name>
 
     <properties>
-        <version>1.61.2</version>
+        <version>1.62.0</version>
 
         <core.api.version>1.286.0</core.api.version>
         <maven.compiler.source>1.8</maven.compiler.source>
