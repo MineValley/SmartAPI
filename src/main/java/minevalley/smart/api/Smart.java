@@ -1,6 +1,5 @@
 package minevalley.smart.api;
 
-import com.google.gson.Gson;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -40,7 +39,6 @@ public final class Smart {
      * Schedules a once off task to occur as soon as possible. This task will
      * be executed by a thread managed by the scheduler.
      *
-     * @param taskName name of task
      * @param runnable Task to be executed
      * @return Task id number (-1 if scheduling failed)
      */
@@ -53,7 +51,6 @@ public final class Smart {
      * <p>
      * This task will be executed by the main server thread.
      *
-     * @param taskName name of task
      * @param delay    Delay in server ticks before executing task
      * @param runnable Task to be executed
      * @return Task id number (-1 if scheduling failed)
@@ -82,7 +79,6 @@ public final class Smart {
      * <p>
      * This task will be executed by the main server thread.
      *
-     * @param taskName name of task
      * @param period   Period in server ticks of the task
      * @param delay    Delay in server ticks before executing first repeat
      * @param runnable Task to be executed
@@ -99,7 +95,6 @@ public final class Smart {
      * Schedules a repeating task. This task will be executed by a thread
      * managed by the scheduler.
      *
-     * @param taskName name of task
      * @param period   Period in server ticks of the task
      * @param delay    Delay in server ticks before executing first repeat
      * @param runnable Task to be executed
