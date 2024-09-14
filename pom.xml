@@ -9,7 +9,7 @@
     <properties>
         <version>1.61.2</version>
 
-        <core.api.version>1.285.0</core.api.version>
+        <core.api.version>1.286.0</core.api.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
