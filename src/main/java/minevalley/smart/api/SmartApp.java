@@ -10,7 +10,7 @@ public abstract class SmartApp {
     public SmartApp() {
         final Class<? extends SmartApp> clazz = getClass();
         if (!clazz.isAnnotationPresent(App.class)) {
-            throw new IllegalArgumentException("Module annotation is missing in module '" + clazz.getSimpleName() + "'");
+            throw new IllegalArgumentException("App annotation is missing in SmartApp '" + clazz.getSimpleName() + "'");
         }
         this.appDescription = clazz.getAnnotation(App.class);
     }

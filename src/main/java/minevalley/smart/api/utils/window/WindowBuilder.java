@@ -1,7 +1,7 @@
 package minevalley.smart.api.utils.window;
 
-import minevalley.smart.api.AppSession;
-import minevalley.smart.api.enums.InterfaceItem;
+import minevalley.core.api.enums.InterfaceItem;
+import minevalley.smart.api.Session;
 import org.bukkit.inventory.ItemStack;
 
 import java.util.function.Consumer;
@@ -26,9 +26,9 @@ public interface WindowBuilder {
 
     WindowBuilder setInterfaceItemsInRange(InterfaceItem item, int from, int to);
 
-    WindowBuilder onReturn(Consumer<AppSession> callback);
+    WindowBuilder onReturn(Consumer<Session> callback);
 
-    WindowBuilder onWindowMinimize(Consumer<AppSession> callback);
+    WindowBuilder onWindowMinimize(Consumer<Session> callback);
 
     WindowItem getItem(int slot);
 

@@ -22,7 +22,7 @@ public @interface App {
     /**
      * Version of development.
      * <p>
-     * <b>Note:</b> This will be visible in the apps description!
+     * <b>Note:</b> This will be visible in the description of the app!
      * </p>
      */
     String version() default "0.0.0";

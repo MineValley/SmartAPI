@@ -1,6 +1,7 @@
 package minevalley.smart.api;
 
 import minevalley.core.api.users.OnlineUser;
+import minevalley.smart.api.utils.window.Window;
 
 public interface Session {
 
@@ -9,4 +10,10 @@ public interface Session {
     void end();
 
     void onEnd(Runnable runnable);
+
+    void openWindow(Window window);
+
+    Window getCurrentWindow();
+
+    void sendPurchaseOffer(PurchaseOffer offer);
 }
