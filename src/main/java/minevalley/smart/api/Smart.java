@@ -475,16 +475,6 @@ public final class Smart {
         return server.getSmartApp(systemName);
     }
 
-    /**
-     * Creates a {@link Gson} instance that fits in a page for pretty printing.
-     * Use this, to convert json-strings to specific objects and vice versa.
-     *
-     * @return an instance of Gson configured that fits in a page for pretty printing
-     */
-    public static Gson getGson() {
-        return server.getGson();
-    }
-
     @Getter
     @AllArgsConstructor
     public static class PosItem {
