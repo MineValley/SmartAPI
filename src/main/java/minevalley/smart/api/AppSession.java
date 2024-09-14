@@ -1,9 +1,9 @@
 package minevalley.smart.api;
 
-import minevalley.core.api.smart.AppSession;
+import minevalley.core.api.smart.Session;
 import minevalley.smart.api.utils.window.Window;
 
-public interface Session extends AppSession {
+public interface AppSession extends Session {
 
     void openWindow(Window window);
 

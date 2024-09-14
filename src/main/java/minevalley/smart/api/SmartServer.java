@@ -1,6 +1,7 @@
 package minevalley.smart.api;
 
 import com.google.gson.Gson;
+import minevalley.core.api.smart.SmartApp;
 import minevalley.smart.api.enums.WindowSize;
 import minevalley.smart.api.utils.ItemBuilder;
 import minevalley.smart.api.utils.window.WindowBuilder;
@@ -59,9 +60,9 @@ public interface SmartServer {
 
     WindowBuilder window(List<WindowItem> items, String title, Smart.PosItem... posItems);
 
-    WindowItem windowItem(ItemStack itemStack, Consumer<Session> consumer);
+    WindowItem windowItem(ItemStack itemStack, Consumer<AppSession> consumer);
 
-    WindowItem advancedWindowItem(ItemStack itemStack, BiConsumer<Session, ClickType> consumer);
+    WindowItem advancedWindowItem(ItemStack itemStack, BiConsumer<AppSession, ClickType> consumer);
 
     ItemBuilder createItem(ItemStack itemStack);
 
@@ -77,7 +78,7 @@ public interface SmartServer {
 
     boolean isMaintenance();
 
-    List<Session> getAllSessions(SmartApp app);
+    List<AppSession> getAllSessions(SmartApp app);
 
     SmartApp getSmartApp(String systemName);
 
