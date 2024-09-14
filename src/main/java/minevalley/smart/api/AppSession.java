@@ -1,30 +1,25 @@
 package minevalley.smart.api;
 
+import minevalley.core.api.smart.Session;
 import minevalley.smart.api.utils.window.Window;
 
-public interface Session {
-
-    String getUserUniqueId();
+public interface AppSession extends Session {
 
     void openWindow(Window window);
 
     Window getCurrentWindow();
 
-    void end();
-
-    void onEnd(Runnable runnable);
-
     void sendPurchaseOffer(PurchaseOffer offer);
 
     default String getUserSetting(String key) {
-        return Smart.getUserSetting(getUserUniqueId(), key);
+        return Smart.getUserSetting(getUser().getUniqueId(), key);
     }
 
     default String getUserSetting(String key, String defaultValue) {
-        return Smart.getUserSetting(getUserUniqueId(), key, defaultValue);
+        return Smart.getUserSetting(getUser().getUniqueId(), key, defaultValue);
     }
 
     default void changeUserSetting(String key, String newValue) {
-        Smart.changeUserSetting(getUserUniqueId(), key, newValue);
+        Smart.changeUserSetting(getUser().getUniqueId(), key, newValue);
     }
 }

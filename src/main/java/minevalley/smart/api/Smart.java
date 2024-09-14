@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
+import minevalley.core.api.smart.SmartApp;
 import minevalley.smart.api.enums.InterfaceItem;
 import minevalley.smart.api.enums.WindowSize;
 import minevalley.smart.api.utils.ItemBuilder;
@@ -309,7 +310,7 @@ public final class Smart {
      * @param consumer  consumer which gets called if a player clicks the item
      * @return Window-item-object to add to the Window-builder
      */
-    public static WindowItem createWindowItem(ItemStack itemStack, Consumer<Session> consumer) {
+    public static WindowItem createWindowItem(ItemStack itemStack, Consumer<AppSession> consumer) {
         return server.windowItem(itemStack, consumer);
     }
 
@@ -321,7 +322,7 @@ public final class Smart {
      * @param consumer    consumer which gets called if a player clicks the item
      * @return Window-item-object to add to the Window-builder
      */
-    public static WindowItem createWindowItem(ItemBuilder itemBuilder, Consumer<Session> consumer) {
+    public static WindowItem createWindowItem(ItemBuilder itemBuilder, Consumer<AppSession> consumer) {
         return server.windowItem(itemBuilder.build(), consumer);
     }
 
@@ -333,7 +334,7 @@ public final class Smart {
      * @param consumer consumer which gets called if a player clicks the item
      * @return Window-item-object to add to the Window-builder
      */
-    public static WindowItem createWindowItem(InterfaceItem item, Consumer<Session> consumer) {
+    public static WindowItem createWindowItem(InterfaceItem item, Consumer<AppSession> consumer) {
         return server.windowItem(item.toItemStack(), consumer);
     }
 
@@ -345,7 +346,7 @@ public final class Smart {
      * @param consumer  consumer which gets called if a player clicks the item
      * @return Window-item-object to add to the Window-builder
      */
-    public static WindowItem createWindowItem(ItemStack itemStack, BiConsumer<Session, ClickType> consumer) {
+    public static WindowItem createWindowItem(ItemStack itemStack, BiConsumer<AppSession, ClickType> consumer) {
         return server.advancedWindowItem(itemStack, consumer);
     }
 
@@ -357,7 +358,7 @@ public final class Smart {
      * @param consumer    consumer which gets called if a player clicks the item
      * @return Window-item-object to add to the Window-builder
      */
-    public static WindowItem createWindowItem(ItemBuilder itemBuilder, BiConsumer<Session, ClickType> consumer) {
+    public static WindowItem createWindowItem(ItemBuilder itemBuilder, BiConsumer<AppSession, ClickType> consumer) {
         return server.advancedWindowItem(itemBuilder.build(), consumer);
     }
 
@@ -369,7 +370,7 @@ public final class Smart {
      * @param consumer consumer which gets called if a player clicks the item
      * @return Window-item-object to add to the Window-builder
      */
-    public static WindowItem createWindowItem(InterfaceItem item, BiConsumer<Session, ClickType> consumer) {
+    public static WindowItem createWindowItem(InterfaceItem item, BiConsumer<AppSession, ClickType> consumer) {
         return server.advancedWindowItem(item.toItemStack(), consumer);
     }
 
@@ -466,7 +467,7 @@ public final class Smart {
         return server;
     }
 
-    public static List<Session> getAllSessions(SmartApp app) {
+    public static List<AppSession> getAllSessions(SmartApp app) {
         return server.getAllSessions(app);
     }
 
