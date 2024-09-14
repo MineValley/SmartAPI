@@ -3,6 +3,7 @@ package minevalley.smart.api;
 import minevalley.core.api.users.OnlineUser;
 import minevalley.smart.api.utils.window.Window;
 
+@SuppressWarnings("unused")
 public interface Session {
 
     OnlineUser getUser();

@@ -6,6 +6,7 @@ import org.bukkit.inventory.ItemStack;
 
 import java.util.function.Consumer;
 
+@SuppressWarnings("unused")
 public interface WindowBuilder {
 
     WindowBuilder setTitle(String title);

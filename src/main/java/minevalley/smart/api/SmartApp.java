@@ -20,5 +20,6 @@ public abstract class SmartApp {
      *
      * @param session new created session
      */
+    @SuppressWarnings("unused")
     public abstract void onSessionCreate(Session session);
 }
