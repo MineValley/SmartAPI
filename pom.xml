@@ -9,7 +9,7 @@
     <properties>
         <version>1.62.0</version>
 
-        <core.api.version>1.286.0</core.api.version>
+        <core-api.version>version-update_1.286.3-SNAPSHOT</core-api.version>
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
     </properties>
@@ -78,7 +78,7 @@
         <dependency>
             <groupId>minevalley.core</groupId>
             <artifactId>api</artifactId>
-            <version>${core.api.version}</version>
+            <version>${core-api.version}</version>
         </dependency>
 
         <!-- Libs -->
