@@ -7,7 +7,7 @@
     <name>SmartAPI</name>
 
     <properties>
-        <core.api.version>1.286.0</core.api.version>
+        <core.api.version>1.299.3</core.api.version>
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
     </properties>
