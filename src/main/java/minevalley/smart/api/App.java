@@ -21,22 +21,6 @@ public @interface App {
     String systemName();
 
     /**
-     * Version of development.
-     * <p>
-     * <b>Note:</b> This will be visible in the description of the app!
-     * </p>
-     */
-    String version() default "0.0.0";
-
-    /**
-     * List of all developers who contributed to this app.
-     * <p>
-     * <b>Note:</b> This will be visible in the app's description!
-     * </p>
-     */
-    String[] authors();
-
-    /**
      * The id of the head which will be used as an app icon in app store and phone menu.
      * <br>
      * <b>Note:</b> In order to maintain the distinctness of the apps, make sure that the head is not yet used in another app!
