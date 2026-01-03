@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
-public interface SmartServer {
+public interface SmartProvider {
 
     String getUserSetting(String uniqueId, String key);
 

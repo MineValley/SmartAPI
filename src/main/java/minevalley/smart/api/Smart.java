@@ -19,14 +19,14 @@ import java.util.function.Consumer;
 public final class Smart {
 
     @Setter
-    private static SmartServer server;
+    private static SmartProvider provider;
 
     public static void changeUserSetting(String uniqueId, String key, String newValue) {
-        server.changeUserSetting(uniqueId, key, newValue);
+        provider.changeUserSetting(uniqueId, key, newValue);
     }
 
     public static String getUserSetting(String uniqueId, String key) {
-        return server.getUserSetting(uniqueId, key);
+        return provider.getUserSetting(uniqueId, key);
     }
 
     public static String getUserSetting(String uniqueId, String key, String defaultValue) {
@@ -39,7 +39,7 @@ public final class Smart {
      * @return new Window-builder
      */
     public static WindowBuilder createWindow(boolean endSessionOnMinimize) {
-        return server.window(WindowSize.FULLSCREEN, endSessionOnMinimize);
+        return provider.window(WindowSize.FULLSCREEN, endSessionOnMinimize);
     }
 
     /**
@@ -48,7 +48,7 @@ public final class Smart {
      * @return new Window-builder
      */
     public static WindowBuilder createWindow(WindowSize size, boolean endSessionOnMinimize) {
-        return server.window(size, endSessionOnMinimize);
+        return provider.window(size, endSessionOnMinimize);
     }
 
     /**
@@ -59,7 +59,7 @@ public final class Smart {
      * @return new Window-builder
      */
     public static WindowBuilder createWindow(List<WindowItem> items, String title, PosItem... posItems) {
-        return server.window(items, title, posItems);
+        return provider.window(items, title, posItems);
     }
 
     /**
@@ -71,7 +71,7 @@ public final class Smart {
      * @return Window-item-object to add to the Window-builder
      */
     public static WindowItem createWindowItem(ItemStack itemStack, Consumer<Session> consumer) {
-        return server.windowItem(itemStack, consumer);
+        return provider.windowItem(itemStack, consumer);
     }
 
     /**
@@ -83,7 +83,7 @@ public final class Smart {
      * @return Window-item-object to add to the Window-builder
      */
     public static WindowItem createWindowItem(InterfaceItem item, Consumer<Session> consumer) {
-        return server.windowItem(item.toItemStack(), consumer);
+        return provider.windowItem(item.toItemStack(), consumer);
     }
 
     /**
@@ -95,7 +95,7 @@ public final class Smart {
      * @return Window-item-object to add to the Window-builder
      */
     public static WindowItem createWindowItem(ItemStack itemStack, BiConsumer<Session, ClickType> consumer) {
-        return server.advancedWindowItem(itemStack, consumer);
+        return provider.advancedWindowItem(itemStack, consumer);
     }
 
     /**
@@ -107,7 +107,7 @@ public final class Smart {
      * @return Window-item-object to add to the Window-builder
      */
     public static WindowItem createWindowItem(InterfaceItem item, BiConsumer<Session, ClickType> consumer) {
-        return server.advancedWindowItem(item.toItemStack(), consumer);
+        return provider.advancedWindowItem(item.toItemStack(), consumer);
     }
 
     /**
@@ -118,19 +118,19 @@ public final class Smart {
      * @return Window-item-object to add to the Window-builder
      */
     public static WindowItem createWindowItem(ItemStack itemStack) {
-        return server.windowItem(itemStack, null);
+        return provider.windowItem(itemStack, null);
     }
 
     public static List<Session> getAllSessions(SmartApp app) {
-        return server.getAllSessions(app);
+        return provider.getAllSessions(app);
     }
 
     public static SmartApp getSmartApp(String systemName) {
-        return server.getSmartApp(systemName);
+        return provider.getSmartApp(systemName);
     }
 
     public static List<SmartApp> getSmartApps() {
-        return server.getSmartApps();
+        return provider.getSmartApps();
     }
 
 
