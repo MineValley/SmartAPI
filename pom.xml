@@ -7,7 +7,6 @@
     <name>SmartAPI</name>
 
     <properties>
-        <version>1.62.0</version>
 
         <core.api.version>1.286.0</core.api.version>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -16,7 +15,7 @@
 
     <groupId>minevalley.smart</groupId>
     <artifactId>api</artifactId>
-    <version>${version}</version>
+    <version>1.62.0</version>
     <packaging>jar</packaging>
 
     <build>
