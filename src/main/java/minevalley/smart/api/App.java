@@ -31,13 +31,13 @@ public @interface App {
     /**
      * List of all developers who contributed to this app.
      * <p>
-     * <b>Note:</b> This will be visible in the apps description!
+     * <b>Note:</b> This will be visible in the app's description!
      * </p>
      */
     String[] authors();
 
     /**
-     * Id of the head which will be used as an app icon in app store and phone menu.
+     * The id of the head which will be used as an app icon in app store and phone menu.
      * <br>
      * <b>Note:</b> In order to maintain the distinctness of the apps, make sure that the head is not yet used in another app!
      */
