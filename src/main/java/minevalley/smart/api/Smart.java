@@ -12,6 +12,7 @@ import java.util.List;
 public final class Smart {
 
     private static SmartProvider provider;
+    private static SmartLoader loader;
 
     /**
      * Gets all active sessions for the provided app.
@@ -82,7 +83,7 @@ public final class Smart {
     @Nullable
     @Contract(pure = true, value = "null -> null")
     public static SmartApp getSmartApp(@Nullable String systemName) {
-        return provider.getSmartApp(systemName);
+        return loader.getSmartApp(systemName);
     }
 
     /**
@@ -93,6 +94,6 @@ public final class Smart {
     @Nonnull
     @Contract(pure = true)
     public static List<SmartApp> getSmartApps() {
-        return provider.getSmartApps();
+        return loader.getSmartApps();
     }
 }
