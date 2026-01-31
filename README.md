@@ -1,6 +1,6 @@
 # ![Logo](https://cdn.minevalley.eu/branding/logo_64px_cropped.png) SmartAPI
 
-API für das Smart-System auf MineValley - ermöglicht die Entwicklung von Apps für das In-Game Smartphone.
+The SmartAPI provides access to the Smart operating system, enabling the development of apps for MineValleyEU smartphones. 
 
 ## Maven Repository
 
