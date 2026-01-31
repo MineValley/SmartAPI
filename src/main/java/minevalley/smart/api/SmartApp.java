@@ -2,6 +2,7 @@ package minevalley.smart.api;
 
 import lombok.Getter;
 import minevalley.core.api.users.OnlineUser;
+import minevalley.smart.api.session.Session;
 
 import javax.annotation.Nonnull;
 

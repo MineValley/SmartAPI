@@ -1,6 +1,8 @@
-package minevalley.smart.api;
+package minevalley.smart.api.session;
 
 import minevalley.core.api.users.OnlineUser;
+import minevalley.smart.api.SmartApp;
+import minevalley.smart.api.payment.PurchaseOffer;
 import org.jetbrains.annotations.Contract;
 
 import javax.annotation.Nonnull;
