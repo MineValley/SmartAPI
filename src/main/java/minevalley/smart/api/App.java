@@ -16,8 +16,18 @@ public @interface App {
      * <b>Note:</b> This will be visible whenever this app is mentioned!
      * </p>
      */
-    String name();
+    String displayName();
 
+    /**
+     * The unique system name of this app.
+     * <p>
+     * <b>Note:</b>
+     * <ul>
+     *     <li>This name will never be visible to users at any time</li>
+     *     <li>This name must not be changed, since then users would have to install the app again</li>
+     *      <li>This name must be unique, to avoid collisions</li>
+     * </ul>
+     */
     String systemName();
 
     /**

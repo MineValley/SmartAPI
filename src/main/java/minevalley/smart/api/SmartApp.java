@@ -26,6 +26,12 @@ public abstract class SmartApp {
      */
     public abstract void onSessionCreate(@Nonnull Session session);
 
+    /**
+     * Starts a new session for the provided user.
+     *
+     * @param user the user to start the session for
+     * @throws IllegalArgumentException if the provided user is null
+     */
     public void startSession(@Nonnull OnlineUser user) throws IllegalArgumentException {
         Smart.startSession(this, user);
     }
