@@ -1,6 +1,5 @@
 package minevalley.smart.api;
 
-import lombok.Setter;
 import org.jetbrains.annotations.Contract;
 
 import javax.annotation.Nonnull;
@@ -10,7 +9,6 @@ import java.util.List;
 @SuppressWarnings("unused")
 public final class Smart {
 
-    @Setter
     private static SmartProvider provider;
 
     @Nonnull
