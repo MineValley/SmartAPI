@@ -102,6 +102,6 @@ public final class Smart {
     @Nonnull
     @Contract(pure = true)
     public static CoreModule getUnderlyingModule(@Nonnull SmartApp app) throws IllegalArgumentException {
-        return provider.getUnderlyingModule(app);
+        return loader.getUnderlyingModule(app);
     }
 }

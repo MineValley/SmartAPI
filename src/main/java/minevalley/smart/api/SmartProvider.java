@@ -1,6 +1,5 @@
 package minevalley.smart.api;
 
-import minevalley.core.api.CoreModule;
 import minevalley.core.api.users.OnlineUser;
 import minevalley.smart.api.session.Session;
 import org.jetbrains.annotations.Contract;
@@ -20,8 +19,4 @@ public interface SmartProvider {
 
     @Nonnull
     Session startSession(@Nonnull SmartApp app, @Nonnull OnlineUser user) throws IllegalArgumentException;
-
-    @Nonnull
-    @Contract(pure = true)
-    CoreModule getUnderlyingModule(@Nonnull SmartApp app) throws IllegalArgumentException;
 }

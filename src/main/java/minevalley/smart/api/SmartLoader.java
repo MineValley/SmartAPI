@@ -1,5 +1,6 @@
 package minevalley.smart.api;
 
+import minevalley.core.api.CoreModule;
 import org.jetbrains.annotations.Contract;
 
 import javax.annotation.Nonnull;
@@ -15,4 +16,8 @@ public interface SmartLoader {
     @Nonnull
     @Contract(pure = true)
     List<SmartApp> getSmartApps();
+
+    @Nonnull
+    @Contract(pure = true)
+    CoreModule getUnderlyingModule(@Nonnull SmartApp app) throws IllegalArgumentException;
 }
