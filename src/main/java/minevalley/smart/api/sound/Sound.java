@@ -1,4 +1,4 @@
-package minevalley.smart.api.enums.sounds;
+package minevalley.smart.api.sound;
 
 import lombok.AccessLevel;
 import lombok.Getter;
