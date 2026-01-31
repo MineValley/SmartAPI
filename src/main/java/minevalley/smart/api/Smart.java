@@ -11,18 +11,6 @@ public final class Smart {
     @Setter
     private static SmartProvider provider;
 
-    public static void changeUserSetting(String uniqueId, String key, String newValue) {
-        provider.changeUserSetting(uniqueId, key, newValue);
-    }
-
-    public static String getUserSetting(String uniqueId, String key) {
-        return provider.getUserSetting(uniqueId, key);
-    }
-
-    public static String getUserSetting(String uniqueId, String key, String defaultValue) {
-        return Optional.ofNullable(getUserSetting(uniqueId, key)).orElse(defaultValue);
-    }
-
     public static List<Session> getAllSessions(SmartApp app) {
         return provider.getAllSessions(app);
     }
