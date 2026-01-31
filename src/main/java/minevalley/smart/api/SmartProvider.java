@@ -1,5 +1,6 @@
 package minevalley.smart.api;
 
+import minevalley.core.api.users.OnlineUser;
 import org.jetbrains.annotations.Contract;
 
 import javax.annotation.Nonnull;
@@ -12,6 +13,10 @@ public interface SmartProvider {
     @Contract(pure = true)
     List<Session> getAllSessions(@Nonnull SmartApp app) throws IllegalArgumentException;
 
+    @Nonnull
+    @Contract(pure = true)
+    List<Session> getAllSessions(@Nonnull OnlineUser user) throws IllegalArgumentException;
+
     @Nullable
     @Contract(pure = true, value = "null -> null")
     SmartApp getSmartApp(@Nullable String systemName);
@@ -19,4 +24,6 @@ public interface SmartProvider {
     @Nonnull
     @Contract(pure = true)
     List<SmartApp> getSmartApps();
+
+    Session startSession(@Nonnull SmartApp app, @Nonnull OnlineUser user) throws IllegalArgumentException;
 }
