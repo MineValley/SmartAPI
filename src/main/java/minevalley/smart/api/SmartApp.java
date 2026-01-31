@@ -1,8 +1,10 @@
 package minevalley.smart.api;
 
 import lombok.Getter;
+import minevalley.core.api.CoreModule;
 import minevalley.core.api.users.OnlineUser;
 import minevalley.smart.api.session.Session;
+import org.jetbrains.annotations.Contract;
 
 import javax.annotation.Nonnull;
 
@@ -35,5 +37,11 @@ public abstract class SmartApp {
      */
     public void startSession(@Nonnull OnlineUser user) throws IllegalArgumentException {
         Smart.startSession(this, user);
+    }
+
+    @Nonnull
+    @Contract(pure = true)
+    public CoreModule getUnderlyingModule() {
+        return Smart.getUnderlyingModule(this);
     }
 }

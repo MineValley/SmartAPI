@@ -1,5 +1,6 @@
 package minevalley.smart.api;
 
+import minevalley.core.api.CoreModule;
 import minevalley.core.api.users.OnlineUser;
 import minevalley.smart.api.session.Session;
 import org.jetbrains.annotations.Contract;
@@ -70,6 +71,7 @@ public final class Smart {
      * @return the newly started session for the provided app and user
      * @throws IllegalArgumentException if the provided app or user is null
      */
+    @Nonnull
     public static Session startSession(@Nonnull SmartApp app, @Nonnull OnlineUser user) throws IllegalArgumentException {
         return provider.startSession(app, user);
     }
@@ -95,5 +97,11 @@ public final class Smart {
     @Contract(pure = true)
     public static List<SmartApp> getSmartApps() {
         return loader.getSmartApps();
+    }
+
+    @Nonnull
+    @Contract(pure = true)
+    public static CoreModule getUnderlyingModule(@Nonnull SmartApp app) throws IllegalArgumentException {
+        return provider.getUnderlyingModule(app);
     }
 }
