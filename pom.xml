@@ -49,7 +49,7 @@
         <dependency>
             <groupId>minevalley.core</groupId>
             <artifactId>api</artifactId>
-            <version>1.300.7</version>
+            <version>1.305.1</version>
         </dependency>
 
         <!-- Libs -->
