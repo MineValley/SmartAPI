@@ -1,6 +1,6 @@
 package minevalley.smart.api;
 
-import minevalley.core.api.users.OnlineUser;
+import minevalley.core.api.user.OnlineUser;
 import minevalley.smart.api.session.Session;
 import org.jetbrains.annotations.Contract;
 
