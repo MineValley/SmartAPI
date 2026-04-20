@@ -5,8 +5,9 @@ The SmartAPI provides access to the Smart operating system, enabling the develop
 ## Maven Repository
 
 ```xml
+
 <repository>
-    <id>github</id>
+    <id>smart-api</id>
     <url>https://maven.pkg.github.com/MineValley/SmartAPI</url>
 </repository>
 ```
@@ -15,8 +16,9 @@ The SmartAPI provides access to the Smart operating system, enabling the develop
 
 ```xml
 <dependency>
-    <groupId>minevalley.smart</groupId>
-    <artifactId>api</artifactId>
-    <version>2.0.0</version>
+    <groupId>eu.minevalley</groupId>
+    <artifactId>smart-api</artifactId>
+    <version>2.4.0</version>
+    <scope>provided</scope>
 </dependency>
 ```
