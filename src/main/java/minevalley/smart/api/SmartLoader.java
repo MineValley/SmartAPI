@@ -1,6 +1,6 @@
 package minevalley.smart.api;
 
-import minevalley.core.api.CoreModule;
+import eu.minevalley.core.api.CoreModule;
 import org.jetbrains.annotations.Contract;
 
 import javax.annotation.Nonnull;

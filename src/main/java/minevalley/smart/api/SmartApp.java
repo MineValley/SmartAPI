@@ -1,8 +1,8 @@
 package minevalley.smart.api;
 
+import eu.minevalley.core.api.CoreModule;
+import eu.minevalley.core.api.user.OnlineUser;
 import lombok.Getter;
-import minevalley.core.api.CoreModule;
-import minevalley.core.api.user.OnlineUser;
 import minevalley.smart.api.session.Session;
 import org.jetbrains.annotations.Contract;
 

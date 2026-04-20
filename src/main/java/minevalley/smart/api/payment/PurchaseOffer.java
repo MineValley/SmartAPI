@@ -47,7 +47,7 @@ public class PurchaseOffer {
     private final Consumer<Session> onAccept, onCancel;
 
     /**
-     * The IBAN to which the payment should be sent. The default leads to the Smart Coorp.
+     * The IBAN to which the payment should be sent. The default leads to the Smart Corp.
      */
     private String iban = "DE01-280501";
 }
