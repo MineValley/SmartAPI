@@ -51,7 +51,7 @@
             <url>https://repo.papermc.io/repository/maven-public/</url>
         </repository>
         <repository>
-            <id>core-api</id>
+            <id>github</id>
             <url>https://maven.pkg.github.com/MineValley/CoreAPI</url>
         </repository>
     </repositories>
