@@ -1,9 +1,9 @@
-package minevalley.smart.api.payment;
+package eu.minevalley.smart.api.payment;
 
+import eu.minevalley.smart.api.session.Session;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
-import minevalley.smart.api.session.Session;
 import org.bukkit.inventory.ItemStack;
 
 import java.util.function.Consumer;

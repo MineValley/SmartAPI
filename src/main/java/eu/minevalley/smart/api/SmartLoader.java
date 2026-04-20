@@ -1,4 +1,4 @@
-package minevalley.smart.api;
+package eu.minevalley.smart.api;
 
 import eu.minevalley.core.api.CoreModule;
 import org.jetbrains.annotations.Contract;
