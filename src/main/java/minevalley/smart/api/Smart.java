@@ -99,6 +99,13 @@ public final class Smart {
         return loader.getSmartApps();
     }
 
+    /**
+     * Gets the underlying core module of the provided smart app.
+     *
+     * @param app app to get the underlying module of
+     * @return the underlying module
+     * @throws IllegalArgumentException if the app is null
+     */
     @Nonnull
     @Contract(pure = true)
     public static CoreModule getUnderlyingModule(@Nonnull SmartApp app) throws IllegalArgumentException {

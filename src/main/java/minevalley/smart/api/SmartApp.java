@@ -39,6 +39,11 @@ public abstract class SmartApp {
         Smart.startSession(this, user);
     }
 
+    /**
+     * Gets the underlying core module of this smart app.
+     *
+     * @return the underlying module
+     */
     @Nonnull
     @Contract(pure = true)
     public CoreModule getUnderlyingModule() {
