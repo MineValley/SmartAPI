@@ -32,7 +32,7 @@
         <dependency>
             <groupId>eu.minevalley</groupId>
             <artifactId>core-api</artifactId>
-            <version>1.306.0</version>
+            <version>1.307.8</version>
             <scope>provided</scope>
         </dependency>
 
