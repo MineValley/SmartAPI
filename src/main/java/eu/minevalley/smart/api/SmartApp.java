@@ -1,5 +1,6 @@
 package eu.minevalley.smart.api;
 
+import eu.minevalley.core.api.Core;
 import eu.minevalley.core.api.CoreModule;
 import eu.minevalley.core.api.user.OnlineUser;
 import eu.minevalley.smart.api.session.Session;
@@ -14,6 +15,7 @@ public abstract class SmartApp {
 
     private static @Nonnull Smart smart;
     private static @Nonnull Loader loader;
+    private static @Nonnull Core core;
 
     /**
      * Gets this apps instance of the {@link Smart}.
@@ -35,6 +37,17 @@ public abstract class SmartApp {
     @Contract(pure = true)
     public static Loader loader() {
         return loader;
+    }
+
+    /**
+     * Gets this apps instance of the {@link Core}.
+     *
+     * @return this apps instance of the Core class
+     */
+    @Nonnull
+    @Contract(pure = true)
+    public static Core core() {
+        return core;
     }
 
     /**
