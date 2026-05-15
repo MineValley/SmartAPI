@@ -10,11 +10,6 @@ import javax.annotation.Nonnull;
 @SuppressWarnings("unused")
 public interface Session {
 
-    /**
-     * Gets the SmartApp this session belongs to.
-     *
-     * @return the SmartApp
-     */
     @Nonnull
     @Contract(pure = true)
     SmartApp getApp();

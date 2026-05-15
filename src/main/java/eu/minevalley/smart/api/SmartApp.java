@@ -9,17 +9,32 @@ import org.jetbrains.annotations.Contract;
 import javax.annotation.Nonnull;
 
 @Getter
-@SuppressWarnings("unused")
+@SuppressWarnings({"NotNullFieldNotInitialized", "unused"})
 public abstract class SmartApp {
 
-    private final App appDescription;
+    private static @Nonnull Smart smart;
+    private static @Nonnull Loader loader;
 
-    public SmartApp() {
-        final Class<? extends SmartApp> clazz = getClass();
-        if (!clazz.isAnnotationPresent(App.class)) {
-            throw new IllegalArgumentException("App annotation is missing in SmartApp '" + clazz.getSimpleName() + "'");
-        }
-        this.appDescription = clazz.getAnnotation(App.class);
+    /**
+     * Gets this apps instance of the {@link Smart}.
+     *
+     * @return this apps instance of the Smart class
+     */
+    @Nonnull
+    @Contract(pure = true)
+    public static Smart smart() {
+        return smart;
+    }
+
+    /**
+     * Gets this apps instance of the {@link Loader}.
+     *
+     * @return this apps instance of the loader
+     */
+    @Nonnull
+    @Contract(pure = true)
+    public static Loader loader() {
+        return loader;
     }
 
     /**
@@ -36,7 +51,23 @@ public abstract class SmartApp {
      * @throws IllegalArgumentException if the provided user is null
      */
     public void startSession(@Nonnull OnlineUser user) throws IllegalArgumentException {
-        Smart.startSession(this, user);
+        smart.startSession(this, user);
+    }
+
+    /**
+     * Gets the @{@link App}-Annotation of this smart app.
+     *
+     * @return the annotation if present
+     * @throws IllegalStateException if the class is missing its annotation.
+     */
+    @Nonnull
+    @Contract(pure = true)
+    public final App annotation() throws IllegalStateException {
+        final Class<? extends SmartApp> clazz = getClass();
+        if (!clazz.isAnnotationPresent(App.class)) {
+            throw new IllegalStateException("App annotation is missing in module '" + clazz.getSimpleName() + "'");
+        }
+        return clazz.getAnnotation(App.class);
     }
 
     /**
@@ -47,6 +78,6 @@ public abstract class SmartApp {
     @Nonnull
     @Contract(pure = true)
     public CoreModule getUnderlyingModule() {
-        return Smart.getUnderlyingModule(this);
+        return loader.getUnderlyingModule(this);
     }
 }
